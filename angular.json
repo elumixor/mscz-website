@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "angular-boilerplate": {
+        "mscz-website": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -26,11 +26,19 @@
             "root": "",
             "sourceRoot": "src",
             "prefix": "app",
+            "i18n": {
+                "sourceLocale": "en-US",
+                "locales": {
+                    "ru": {
+                        "translation": "src/locale/messages.ru.xlf"
+                    }
+                }
+            },
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-angular:application",
                     "options": {
-                        "outputPath": "dist/angular-boilerplate",
+                        "outputPath": "dist/mscz-website",
                         "index": "src/index.html",
                         "browser": "src/main.ts",
                         "polyfills": ["zone.js"],
@@ -41,6 +49,7 @@
                         "scripts": [],
                         "server": "src/main.server.ts",
                         "prerender": true,
+                        "localize": true,
                         "ssr": {
                             "entry": "server/main.ts"
                         }
@@ -65,6 +74,9 @@
                             "optimization": false,
                             "extractLicenses": false,
                             "sourceMap": true
+                        },
+                        "ru": {
+                            "localize": ["ru"]
                         }
                     },
                     "defaultConfiguration": "production"
@@ -72,15 +84,20 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "angular-boilerplate:build",
-                        "proxyConfig": "src/proxy.conf.json"
+                        "browserTarget": "mscz-website:build",
+                        "proxyConfig": "src/proxy.conf.json",
+                        "host": "0.0.0.0",
+                        "port": 4200
                     },
                     "configurations": {
                         "production": {
-                            "buildTarget": "angular-boilerplate:build:production"
+                            "buildTarget": "mscz-website:build:production"
                         },
                         "development": {
-                            "buildTarget": "angular-boilerplate:build:development"
+                            "buildTarget": "mscz-website:build:development"
+                        },
+                        "ru": {
+                            "buildTarget": "mscz-website:build:development,ru"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -88,7 +105,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "buildTarget": "angular-boilerplate:build"
+                        "buildTarget": "mscz-website:build"
                     }
                 },
                 "lint": {

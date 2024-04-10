@@ -1,3 +1,3 @@
-# Boilerplate for angular projects
+# MSCZ Website
 
 Built with Angular.
