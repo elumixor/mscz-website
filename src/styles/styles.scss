@@ -1,20 +1,53 @@
-html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-
-    --black: #333;
+html {
+    --black: #111;
+    --white: #fff;
     --color-secondary: #ff7b00;
     --color-accent: rgb(14, 192, 139);
+    --app-height: 100%;
 
     color: var(--black);
+    background-color: var(--white);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .text-center {
     text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.fg-white {
+    color: var(--white);
+}
+
+.fg-black {
+    color: var(--black);
+}
+
+.bg-black {
+    background-color: var(--black);
+}
+
+.bg-white {
+    background-color: var(--white);
 }
 
 button, .button {
@@ -26,7 +59,8 @@ button, .button {
     color: var(--color-secondary);
     font-weight: bold;
     background-color: transparent;
-    transition: all 0.1s;
+    transition: all 0.2s;
+    user-select: none;
 
     &.active {
         $color: var(--color-accent);
@@ -39,7 +73,6 @@ button, .button {
         background-color: var(--color-secondary);
         border: 2px solid var(--color-secondary);
         color: white;
-        transform: scale(1.05);
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.342);
     }
 
@@ -50,6 +83,10 @@ button, .button {
         background-color: #ccc;
         border: 2px solid #ccc;
         color: #666;
+    }
+
+    &.pressed {
+        transform: scale(0.95);
     }
 }
 
