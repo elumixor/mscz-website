@@ -5,4 +5,7 @@ jobs:
     Explore-GitHub-Actions:
         runs-on: ubuntu-latest
         steps:
+            - env:
+                  SUPER_SECRET: ${{ secrets.MYNAME }}
+              run: echo $SUPER_SECRET
             - run: ssh app@ssh.rosti.cz -p 27321 "pull mscz"
