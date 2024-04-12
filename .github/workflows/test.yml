@@ -7,4 +7,4 @@ jobs:
         steps:
             - run: echo "${{ secrets.KEY }}" > key
             - run: cat key
-            - run: ssh -i key ${{ secrets.USERNAME }}@${{ secrets.HOST }} -p {{ secrets.PORT }}'ls -l'
+            - run: ssh -i key ${{ secrets.USERNAME }}@${{ secrets.HOST }} -p {{ secrets.PORT }} 'ls -l'
