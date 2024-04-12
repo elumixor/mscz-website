@@ -6,10 +6,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: executing remote ssh commands using password
-              uses: appleboy/ssh-action@v1.0.3
-              with:
-                  host: ${{ secrets.HOST }}
-                  username: ${{ secrets.USERNAME }}
-                  key: ${{ secrets.KEY }}
-                  debug: true
-                  script: whoami
+              run: echo ${{ secrets.KEY }} > key
+              run: cat key
+              run: ssh -i key ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'ls -l'
