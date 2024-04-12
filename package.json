@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve",
+        "start": "npm run serve:ssr",
         "build": "ng build",
         "dev": "ng serve",
         "dev:ru": "ng serve --configuration=ru",
@@ -12,7 +12,7 @@
         "test": "jest --verbose",
         "test:coverage": "jest --coverage",
         "test:watch": "jest --watch",
-        "serve:ssr": "node dist/mscz-website/server/server.mjs",
+        "serve:ssr": "node dist/mscz-website/server/en/server.mjs",
         "extract-i18n": "ng extract-i18n --output-path src/locale"
     },
     "private": true,

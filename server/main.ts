@@ -9,7 +9,7 @@ import bootstrap from "../src/main.server";
 export function app(): express.Express {
     const server = express();
     const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-    const browserDistFolder = resolve(serverDistFolder, "../browser");
+    const browserDistFolder = resolve(serverDistFolder, "../../browser");
     const indexHtml = join(serverDistFolder, "index.server.html");
 
     const commonEngine = new CommonEngine();
@@ -17,8 +17,11 @@ export function app(): express.Express {
     server.set("view engine", "html");
     server.set("views", browserDistFolder);
 
+    server.use(express.static("server/public"));
+    server.use(express.static(browserDistFolder));
+
     // Example Express Rest API endpoints
-    // server.get('/api/**', (req, res) => { });
+    // server.get("/api/**", (req, res) => {});
     // Serve static files from /browser
     server.get(
         "*.*",
@@ -47,7 +50,7 @@ export function app(): express.Express {
 }
 
 function run(): void {
-    const port = process.env["PORT"] || 4000;
+    const port = process.env["PORT"] ?? 8080;
 
     // Start up the Node server
     const server = app();

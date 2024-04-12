@@ -27,7 +27,7 @@
             "sourceRoot": "src",
             "prefix": "app",
             "i18n": {
-                "sourceLocale": "en-US",
+                "sourceLocale": "en",
                 "locales": {
                     "ru": {
                         "translation": "src/locale/messages.ru.xlf"
