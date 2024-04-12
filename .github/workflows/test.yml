@@ -5,7 +5,15 @@ jobs:
         name: Build
         runs-on: ubuntu-latest
         steps:
-            - run: echo "${{ secrets.KEY }}" > key
-            - run: chmod 600 key
-            # - run: cat key
-            - run: ssh -v -i key ${{ secrets.USERNAME }}@${{ secrets.HOST }} -p ${{ secrets.PORT }} 'ls -l'
+            # - run: echo "${{ secrets.KEY }}" > key
+            # - run: chmod 600 key
+            # # - run: cat key
+            # - run: ssh -v -i key ${{ secrets.USERNAME }}@${{ secrets.HOST }} -p ${{ secrets.PORT }} 'ls -l'
+            - name: executing remote ssh commands using password
+              uses: appleboy/ssh-action@v1.0.3
+              with:
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  password: ${{ secrets.PASSWORD }}
+                  port: ${{ secrets.PORT }}
+                  script: whoami
