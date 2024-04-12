@@ -5,7 +5,7 @@ jobs:
         name: Build
         runs-on: ubuntu-latest
         steps:
-            - run: echo "${{ secrets.KEY }}" > ~/.ssh/id_ed25519
-            - run: chmod 600 ~/.ssh/id_ed25519
-            - run: cat key
-            - run: ssh -v -i ~/.ssh/id_ed25519 ${{ secrets.USERNAME }}@${{ secrets.HOST }} -p ${{ secrets.PORT }} 'ls -l'
+            - run: echo "${{ secrets.KEY }}" > key
+            - run: chmod 600 key
+            # - run: cat key
+            - run: ssh -v -i key ${{ secrets.USERNAME }}@${{ secrets.HOST }} -p ${{ secrets.PORT }} 'ls -l'
