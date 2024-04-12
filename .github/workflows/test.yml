@@ -1,11 +1,15 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: remote ssh command
 on: [push]
 jobs:
-    Explore-GitHub-Actions:
+    build:
+        name: Build
         runs-on: ubuntu-latest
         steps:
-            - env:
-                  SUPER_SECRET: ${{ secrets.MYNAME }}
-              run: echo $SUPER_SECRET
-            - run: ssh app@ssh.rosti.cz -p 27321 "pull mscz"
+            - name: executing remote ssh commands using password
+              uses: appleboy/ssh-action@v1.0.3
+              with:
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  password: ${{ secrets.PASSWORD }}
+                  port: ${{ secrets.PORT }}
+                  script: whoami
