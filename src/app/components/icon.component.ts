@@ -29,7 +29,7 @@ export class IconComponent {
     @Input({ required: true }) src!: string;
 
     get style() {
-        const maskImage = `url(assets/images/${this.src})`;
+        const maskImage = `url(assets/images/icons/${this.src})`;
         return {
             "mask-image": maskImage,
             "-webkit-mask-image": maskImage,

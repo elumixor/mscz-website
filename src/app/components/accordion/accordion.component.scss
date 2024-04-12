@@ -1,0 +1,21 @@
+:host {
+    display: block;
+}
+
+.title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.icon {
+    padding: var(--padding);
+    padding-right: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 100;
+    transition: transform 0.3s;
+
+    &.active {
+        transform: rotate(45deg);
+    }
+}

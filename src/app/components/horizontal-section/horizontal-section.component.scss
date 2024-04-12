@@ -1,0 +1,13 @@
+.container {
+    padding: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

@@ -1,1 +1,15 @@
-<p>contacts works!</p>
+<div class="text-center">
+    <h3>Contacts</h3>
+    <p>In case of any questions, please contact us:</p>
+    <app-avatar image="assets/images/people/contact.png" [name]="contact.name" />
+    <p>Telegram / WhatsApp / Mobile</p>
+    <br>
+    <p>{{contact.phone}}</p>
+    <br>
+    <div class="social">
+        <app-icon src="telegram.svg" />
+        <app-icon src="whatsapp.svg" />
+        <app-icon src="phone.svg" />
+    </div>
+
+</div>

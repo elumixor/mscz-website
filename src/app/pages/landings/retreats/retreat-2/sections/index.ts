@@ -1,5 +1,5 @@
 export * from "./hero/hero.component";
-export * from "./benefits/benefits.component";
+export * from "./features/features.component";
 export * from "./reviews/reviews.component";
 export * from "./previous-retreat/previous-retreat.component";
 export * from "./stats/stats.component";

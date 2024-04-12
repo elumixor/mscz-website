@@ -1,1 +1,8 @@
-<p>reviews works!</p>
+<h3 class="text-center">Reviews from our participants</h3>
+<app-horizontal-section>
+    <div class="divider"></div>
+    @for (review of reviews; track $index) {
+    <app-review [review]="review" />
+    <div class="divider"></div>
+    }
+</app-horizontal-section>

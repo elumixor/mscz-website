@@ -1,0 +1,15 @@
+:host {
+    display: block;
+    background-color: var(--light-gray);
+}
+
+.divider {
+    height: 30px;
+    border: 1px solid var(--black);
+    margin: auto 2rem;
+    border-radius: 5px;
+}
+
+h3 {
+    padding-top: 2rem;
+}

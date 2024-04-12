@@ -2,4 +2,16 @@
     display: block;
     background-color: var(--black);
     color: var(--white);
+    padding: 2rem;
+}
+
+.title {
+    justify-content: center;
+    --icon-size: 2rem;
+}
+
+em {
+    color: var(--color-secondary);
+    font-style: normal;
+    font-weight: bold;
 }

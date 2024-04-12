@@ -13,6 +13,14 @@ import { FooterComponent } from "@components";
 export class AppComponent {
     constructor() {
         if (!isPlatformBrowser(inject(PLATFORM_ID))) return;
+
+        console.log(window.innerHeight);
         document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`);
+
+        document.addEventListener("resize", () => {
+            console.log(window.innerHeight);
+            document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`);
+        });
+        // document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`);
     }
 }

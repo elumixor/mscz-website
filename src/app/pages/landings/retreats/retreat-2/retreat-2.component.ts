@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import {
-    BenefitsComponent,
+    FeaturesComponent,
     ContactsComponent,
     CtaComponent,
     FaqComponent,
@@ -15,7 +15,7 @@ import {
     standalone: true,
     imports: [
         HeroComponent,
-        BenefitsComponent,
+        FeaturesComponent,
         ReviewsComponent,
         PreviousRetreatComponent,
         StatsComponent,

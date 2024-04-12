@@ -1,1 +1,11 @@
-<p>faq works!</p>
+<h3>Frequently Asked Questions</h3>
+
+@for (question of questions; track $index) {
+<app-accordion class="accordion">
+    <h4 acc-title>{{$index + 1}}. {{question.question}}</h4>
+    <p acc-content>{{question.answer}}</p>
+</app-accordion>
+@if ($index !== questions.length - 1) {
+<hr />
+}
+}

@@ -1,0 +1,56 @@
+:root {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    --text-small: 0.9rem;
+    --text-smaller: 0.8rem;
+}
+
+h1, .h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+}
+
+h2, .h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+h3, .h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+p {
+    line-height: 1.2;
+}
+
+.text {
+    &-center {
+        text-align: center;
+    }
+
+    &-right {
+        text-align: right;
+    }
+
+    &-left {
+        text-align: left;
+    }
+
+    &-small {
+        font-size: var(--text-small);
+    }
+
+    &-smaller {
+        font-size: var(--text-smaller);
+    }
+}

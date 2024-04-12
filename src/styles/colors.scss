@@ -1,0 +1,30 @@
+:root {
+    --black: #111;
+    --white: #fff;
+    --light-gray: #f5f5f5;
+    --color-secondary: #ff7b00;
+    --color-accent: rgb(14, 192, 139);
+    --app-height: 100%;
+    --padding: 1rem;
+}
+
+html {
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.fg-white {
+    color: var(--white);
+}
+
+.fg-black {
+    color: var(--black);
+}
+
+.bg-black {
+    background-color: var(--black);
+}
+
+.bg-white {
+    background-color: var(--white);
+}
