@@ -5,7 +5,6 @@ jobs:
         name: Build
         runs-on: ubuntu-latest
         steps:
-            - name: executing remote ssh commands using password
-              run: echo ${{ secrets.KEY }} > key
-              run: cat key
-              run: ssh -i key ${{ secrets.USERNAME }}@${{ secrets.HOST }} -p {{ secrets.PORT }}'ls -l'
+            - run: echo ${{ secrets.KEY }} > key
+            - run: cat key
+            - run: ssh -i key ${{ secrets.USERNAME }}@${{ secrets.HOST }} -p {{ secrets.PORT }}'ls -l'
