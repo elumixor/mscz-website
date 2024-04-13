@@ -9,7 +9,7 @@
         "dev:ru": "ng serve --configuration=ru",
         "lint": "ng lint",
         "watch": "ng build --watch --configuration development",
-        "test": "jest --verbose",
+        "test": "jest --verbose --passWithNoTests",
         "test:coverage": "jest --coverage",
         "test:watch": "jest --watch",
         "serve:ssr": "node dist/mscz-website/server/en/server.mjs",
