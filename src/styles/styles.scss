@@ -2,3 +2,16 @@
 @use "./button.scss";
 @use "./layout.scss";
 @use "./fonts.scss";
+
+.no-clickable {
+    pointer-events: none;
+}
+
+.clickable {
+    pointer-events: all;
+}
+
+em {
+    font-style: normal;
+    font-weight: bold;
+}

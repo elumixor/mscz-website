@@ -8,4 +8,5 @@ import { FeatureComponent } from "@components";
     templateUrl: "./features.component.html",
     styleUrl: "./features.component.scss",
 })
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class FeaturesComponent {}

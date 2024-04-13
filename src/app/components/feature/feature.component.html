@@ -1,16 +1,13 @@
-<section>
-    @if (image) {
-    <div class="image" [style.background-image]="'url(' + image + ')'"></div>
-    }
+<div class="vspace"></div>
+<section #section>
+    <div class="image" [class.alternate]="alternate" [style.background-image]="'url(' + image + ')'" #img></div>
 
-    <div class="content">
-        <div class="h3 title">
-            <ng-content select="[feature-title]"></ng-content>
-            <div class="title-overlay"></div>
-        </div>
-        <div class="description">
-            <ng-content select="[feature-description]"></ng-content>
-            <div class="description-overlay"></div>
-        </div>
+    <div class="h3 title" #title>
+        <ng-content select="[feature-title]"></ng-content>
+        <!-- <div class="title-overlay"></div> -->
+    </div>
+    <div class="description" [class.alternate]="alternate" #description>
+        <ng-content select="[feature-description]"></ng-content>
+        <!-- <div class="description-overlay"></div> -->
     </div>
 </section>

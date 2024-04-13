@@ -1,9 +1,7 @@
 :host {
     display: block;
     padding-top: 1rem;
-    // background-color: color-mix(in srgb, var(--color-secondary) 50%, white);
-    // background-color: var(--black);
-    // color: white;
+    background-color: white;
 }
 
 h3 {
@@ -13,22 +11,16 @@ h3 {
 
 h4 {
     padding: 2em var(--padding);
-    // color: var(--color-secondary);
     cursor: pointer;
     font-weight: normal;
-    // border-top: 1px solid white;
-    // border-bottom: 1px solid white;
 }
 
 p {
     padding: var(--padding);
     padding-bottom: 2em;
-    // color: var(--color-secondary);
 }
 
 hr {
     color: white;
-    // width: 90%;
     margin: 0 var(--padding);
-    // padding: var(--padding);
 }

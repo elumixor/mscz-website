@@ -1,0 +1,61 @@
+.cta {
+    left: 0;
+    position: fixed;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    padding: var(--padding);
+    padding-bottom: calc(var(--padding));
+    background: linear-gradient(0, var(--black), transparent);
+    pointer-events: none;
+    color: white;
+}
+
+button {
+    padding: 5px 5px 0px;
+    width: calc(100%);
+    background-color: rgb(0 0 0 / 30%);
+    color: var(--color-secondary);
+    border-radius: 50px;
+    pointer-events: all;
+
+    animation: pulse 4s ease-in infinite;
+
+    @keyframes pulse {
+        0% {
+            background-color: rgb(0 0 0 / 30%);
+        }
+        50% {
+            background-color: color-mix(in srgb, rgb(0 0 0 / 30%) 70%, var(--color-secondary));
+            // background-color: var(--color-secondary);
+            color: color-mix(in srgb, white 50%, var(--color-secondary));
+        }
+        100% {
+            background-color: rgb(0 0 0 / 30%);
+        }
+    }
+
+    .button-text {
+        font-variant: all-small-caps;
+        font-size: 1.5rem;
+    }
+
+    .hint {
+        margin: 5px 0;
+    }
+}
+
+.price-text {
+    text-align: center;
+    margin: 5px 0 10px;
+    font-size: var(--text-small);
+    text-shadow: 0 0 5px black;
+}
+
+.hint {
+    font-weight: normal;
+    text-align: center;
+    font-size: var(--text-smaller);
+    opacity: 0.7;
+    text-shadow: 0 0 5px black;
+}
