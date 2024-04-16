@@ -1,9 +1,11 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
+import { Title } from "@angular/platform-browser";
+import { IconComponent } from "@components";
 import {
-    FeaturesComponent,
     ContactsComponent,
     CtaComponent,
     FaqComponent,
+    FeaturesComponent,
     HeroComponent,
     PreviousRetreatComponent,
     ReviewsComponent,
@@ -22,8 +24,15 @@ import {
         FaqComponent,
         CtaComponent,
         ContactsComponent,
+        IconComponent,
     ],
     templateUrl: "./retreat-2.component.html",
     styleUrl: "./retreat-2.component.scss",
 })
-export class Retreat2Component {}
+export class Retreat2Component {
+    private readonly title = inject(Title);
+
+    constructor() {
+        this.title.setTitle("Retreat in May | MeditationSteps.cz");
+    }
+}

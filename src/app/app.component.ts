@@ -1,5 +1,6 @@
 import { isPlatformBrowser } from "@angular/common";
-import { Component, PLATFORM_ID, inject } from "@angular/core";
+import { Component, NgZone, PLATFORM_ID, inject } from "@angular/core";
+import { Title } from "@angular/platform-browser";
 import { RouterOutlet } from "@angular/router";
 import { FooterComponent } from "@components";
 import { gsap } from "gsap";
@@ -13,17 +14,24 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 })
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class AppComponent {
+    private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+    private readonly ngZone = inject(NgZone);
+    private readonly titleService = inject(Title);
     constructor() {
-        if (!isPlatformBrowser(inject(PLATFORM_ID))) return;
+        this.titleService.setTitle("MeditationSteps.cz");
 
-        gsap.registerPlugin(ScrollTrigger);
+        if (!this.isBrowser) return;
 
-        // console.log(window.innerHeight);
-        document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`);
-
-        document.addEventListener("resize", () => {
-            // console.log(window.innerHeight);
+        this.ngZone.runOutsideAngular(() => {
             document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`);
+
+            document.addEventListener("resize", () =>
+                document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`),
+            );
+
+            // window.onbeforeunload = () => window.scrollTo(0, 0);
+
+            gsap.registerPlugin(ScrollTrigger);
         });
     }
 }

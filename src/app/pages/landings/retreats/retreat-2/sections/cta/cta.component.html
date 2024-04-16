@@ -1,7 +1,32 @@
-<div class="cta" #cta>
-    <p class="hint" #priceHint>Full price for 4 days is <em>6000 CZK / 235 EUR</em></p>
-    <p class="price-text" #priceHint>Reservation deposit is <em>2000 CZK / 80 EUR</em></p>
-    <button class="clickable">
+<!-- Simple form for email and a submit button -->
+<form [formGroup]="form" (ngSubmit)="onSubmit()" #formRef>
+    <h3 class="text-center">Register!</h3>
+    <label for="email">Enter your email</label>
+    <input type="email" id="email" name="email" placeholder="your@email.com" formControlName="email"
+           autocomplete="email">
+
+    <!-- @if (!email.valid && email.touched) { -->
+    <!-- <span class="hint error" [class.active]="!email.valid && form.touched"> -->
+    <app-accordion-content class="hint error" [isOpen]="!email.valid && form.touched">
+        Email is invalid
+    </app-accordion-content>
+    <!-- </span> -->
+    <!-- } -->
+    <button type="submit" class="submit" #submit>Reserve a place</button>
+    <p class="hint text-center after-hint">
+        After registration, you will receive an email with payment instructions.
+    </p>
+</form>
+
+<div class="container" #fixedContainer>
+    <div class="scroller" #scroller></div>
+    <div #price>
+        <p class="hint">Full price for 4 days is <em>6000 CZK / 235 EUR</em></p>
+    </div>
+    <div #price>
+        <p class="price-text">Reservation deposit is <em>2000 CZK / 80 EUR</em></p>
+    </div>
+    <button class="fixed-button" (click)="scrollToForm()">
         <div class="button-text">
             Reserve a place
         </div>
