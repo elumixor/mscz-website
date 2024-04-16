@@ -35,3 +35,16 @@
         </div>
     </button>
 </div>
+
+<div class="overlay" [class.hidden]="!overlayShown">
+    <h2>
+        🎉🎉🎉
+    </h2>
+    <h4>
+        Thank you for your registration!
+    </h4>
+    <p>You will receive an email with payment instructions shortly.</p>
+    <p>Once the payment is received, your place will be reserved!</p>
+
+    <button class="close" (click)="overlayShown = false">Close</button>
+</div>

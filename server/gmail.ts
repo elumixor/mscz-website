@@ -4,7 +4,10 @@ import fs from "fs";
 import type { JWTInput, OAuth2Client } from "google-auth-library";
 import { gmail_v1, google } from "googleapis";
 import { fileData } from "./utils";
-import nodemailer from "nodemailer";
+import MailComposer from "nodemailer/lib/mail-composer";
+import type Mail from "nodemailer/lib/mailer";
+import path from "path";
+import juice from "juice";
 
 export class Gmail {
     private readonly authenticated = new EventEmitter<gmail_v1.Gmail>();
@@ -15,7 +18,41 @@ export class Gmail {
 
     readonly gmail = this.authenticated.nextEvent;
 
-    async authorize() {
+    constructor() {
+        void this.authorize();
+    }
+
+    async send(options: {
+        to: string;
+        subject: string;
+        html: string;
+        text?: string;
+        attachments?: Mail.Attachment[];
+        replacements?: Record<string, string>;
+    }) {
+        const { html, attachments } = this.processHTML(options.html, options.replacements);
+        options.html = html;
+        options.attachments = [...(options.attachments ?? []), ...attachments];
+
+        const mail = new MailComposer(options);
+        const message = await mail.compile().build();
+        const encodedMessage = Buffer.from(message)
+            .toString("base64")
+            .replace(/\+/g, "-")
+            .replace(/\//g, "_")
+            .replace(/=+$/, "");
+
+        const gmail = await this.gmail;
+        console.log("Sending email to", options.to, options.html, options.attachments);
+        await gmail.users.messages.send({
+            userId: "me",
+            requestBody: {
+                raw: encodedMessage,
+            },
+        });
+    }
+
+    private async authorize() {
         const token = this.token();
         if (token) {
             const auth = google.auth.fromJSON(token) as OAuth2Client;
@@ -44,32 +81,33 @@ export class Gmail {
         this.authenticated.emit(gmail);
     }
 
-    async sendTestEmail() {
-        const emailLines = [
-            "From: meditationsteps.czechia@gmail.com",
-            "To: meditationsteps.czechia@gmail.com",
-            "Content-type: text/html;charset=iso-8859-1",
-            "MIME-Version: 1.0",
-            "Subject: Test Subject",
-            "",
-            "<h1>This is a test email</h1>",
-        ];
+    private processHTML(html: string, replacements?: Record<string, string>) {
+        for (const [key, value] of Object.entries(replacements ?? {}))
+            html = html.replace(new RegExp(`{{${key}}}`, "g"), value);
 
-        const email = emailLines.join("\r\n").trim();
-        const base64Email = Buffer.from(email).toString("base64");
+        const attachments: Mail.Attachment[] = [];
 
-        const gmail = await this.gmail;
-        await gmail.users.messages.send({
-            userId: "me",
+        // Extract src="[EXTRACTED]" and replace it with src="cid:attachment[number]"
+        let i = 0;
 
-            requestBody: {
-                raw: base64Email,
-            },
-        });
+        const regex = /src="([^"]+)"/g;
+        let match: RegExpExecArray | null;
+
+        while ((match = regex.exec(html)) !== null) {
+            const [src, extracted] = match;
+            const attachment = {
+                filename: path.basename(extracted),
+                path: `.${extracted}`,
+                cid: `attachment${i}`,
+            };
+            html = html.replace(src, `src="cid:${attachment.cid}"`);
+            attachments.push(attachment);
+            i++;
+        }
+
+        // Inline CSS
+        html = juice(html);
+
+        return { html, attachments };
     }
 }
-
-const gmail = new Gmail();
-await gmail.authorize();
-// await gmail.listLabels();
-await gmail.sendTestEmail();

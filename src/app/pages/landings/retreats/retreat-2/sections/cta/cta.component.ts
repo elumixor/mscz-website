@@ -23,6 +23,8 @@ import { gsap } from "gsap";
     styleUrl: "./cta.component.scss",
 })
 export class CtaComponent implements AfterViewInit {
+    overlayShown = false;
+
     @ViewChild("formRef") private readonly formRef!: ElementRef<HTMLElement>;
     @ViewChild("fixedContainer") private readonly fixedContainer!: ElementRef<HTMLElement>;
     @ViewChild("submit") private readonly submit!: ElementRef<HTMLElement>;
@@ -46,6 +48,9 @@ export class CtaComponent implements AfterViewInit {
 
         const { value } = this.email;
         if (!value) throw new Error("Email is required");
+
+        this.overlayShown = true;
+
         void this.network.post("register", { email: value });
     }
 
