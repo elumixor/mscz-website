@@ -1,5 +1,5 @@
 form {
-    padding: 4rem var(--padding) 2rem;
+    padding: 6rem var(--padding);
 
     background-color: rgba(0, 0, 0, 0.575);
     backdrop-filter: blur(5px);
@@ -8,10 +8,10 @@ form {
 
 label {
     display: block;
-    text-align: center;
     font-style: italic;
     font-weight: 500;
     opacity: 0.8;
+    margin-left: var(--padding);
 }
 
 input {
@@ -22,8 +22,6 @@ input {
     border-radius: 5rem;
     background-color: transparent;
     background-color: rgb(255 255 255 / 80%);
-    // color: white;
-    // text-align: center;
 
     font-size: 1rem;
 
@@ -39,7 +37,7 @@ input {
 }
 
 h3 {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 .container {
@@ -56,12 +54,8 @@ h3 {
 }
 
 .submit {
-    // padding: 1rem 2rem;
     width: 100%;
     border-radius: 5rem;
-    // background-color: var(--color-secondary);
-    // color: white;
-    // font-size: 1.5rem;
     font-weight: 500;
     cursor: pointer;
     pointer-events: all;
@@ -75,7 +69,6 @@ h3 {
     background-color: rgb(0 0 0 / 30%);
     color: var(--color-secondary);
     border-radius: 50px;
-    pointer-events: all;
 
     animation: pulse 4s ease-in infinite;
 
@@ -85,7 +78,6 @@ h3 {
         }
         50% {
             background-color: color-mix(in srgb, rgb(0 0 0 / 30%) 70%, var(--color-secondary));
-            // background-color: var(--color-secondary);
             color: color-mix(in srgb, white 50%, var(--color-secondary));
         }
         100% {
@@ -94,8 +86,8 @@ h3 {
     }
 
     .button-text {
-        font-variant: all-small-caps;
-        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-size: 1.2rem;
     }
 
     .hint {
@@ -136,22 +128,13 @@ h3 {
 }
 
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255 255 255 / 90%);
-    backdrop-filter: blur(5px);
-    z-index: 100;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: calc(var(--padding) * 2);
     text-align: center;
-    opacity: 1;
-    transition: all 0.3s;
+    height: 100%;
 
     h2 {
         margin-bottom: 2rem;
@@ -167,10 +150,5 @@ h3 {
 
     button {
         margin-top: 2rem;
-    }
-
-    &.hidden {
-        pointer-events: none;
-        opacity: 0;
     }
 }

@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
-import { AccordionContentComponent } from "@components/accordion-content/accordion-content.component";
+import { TabComponent } from "@components/tab.component";
 
 @Component({
     selector: "app-accordion",
     standalone: true,
-    imports: [AccordionContentComponent],
+    imports: [TabComponent],
     templateUrl: "./accordion.component.html",
     styleUrl: "./accordion.component.scss",
 })

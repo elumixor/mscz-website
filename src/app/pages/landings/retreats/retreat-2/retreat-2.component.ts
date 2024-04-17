@@ -35,4 +35,12 @@ export class Retreat2Component {
     constructor() {
         this.title.setTitle("Retreat in May | MeditationSteps.cz");
     }
+
+    readonly place = {
+        lat: 49.7245819,
+        long: 16.0503658,
+        zoom: 9,
+        title: "Rekreační středisko Naděje",
+        description: "Svratouch 306",
+    };
 }

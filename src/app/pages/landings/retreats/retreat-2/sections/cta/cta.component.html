@@ -1,18 +1,15 @@
 <!-- Simple form for email and a submit button -->
 <form [formGroup]="form" (ngSubmit)="onSubmit()" #formRef>
-    <h3 class="text-center">Register!</h3>
-    <label for="email">Enter your email</label>
+    <h3 class="text-center">Participate!</h3>
+    <label for="email">Email</label>
     <input type="email" id="email" name="email" placeholder="your@email.com" formControlName="email"
            autocomplete="email">
 
-    <!-- @if (!email.valid && email.touched) { -->
-    <!-- <span class="hint error" [class.active]="!email.valid && form.touched"> -->
-    <app-accordion-content class="hint error" [isOpen]="!email.valid && form.touched">
+    <app-tab class="hint error" [isOpen]="!email.valid && form.touched">
         Email is invalid
-    </app-accordion-content>
-    <!-- </span> -->
-    <!-- } -->
-    <button type="submit" class="submit" #submit>Reserve a place</button>
+    </app-tab>
+
+    <app-button type="submit" class="submit" #submit>Reserve my place</app-button>
     <p class="hint text-center after-hint">
         After registration, you will receive an email with payment instructions.
     </p>
@@ -20,31 +17,35 @@
 
 <div class="container" #fixedContainer>
     <div class="scroller" #scroller></div>
-    <div #price>
-        <p class="hint">Full price for 4 days is <em>6000 CZK / 235 EUR</em></p>
+    <div #priceContainer>
+        <div #price>
+            <p class="hint">Full price for 4 days is <em>6000 CZK / 235 EUR</em></p>
+        </div>
+        <div #price>
+            <p class="price-text">Reservation deposit is <em>2000 CZK / 80 EUR</em></p>
+        </div>
     </div>
-    <div #price>
-        <p class="price-text">Reservation deposit is <em>2000 CZK / 80 EUR</em></p>
-    </div>
-    <button class="fixed-button" (click)="scrollToForm()">
+    <app-button class="fixed-button" (click)="scrollToForm()">
         <div class="button-text">
-            Reserve a place
+            Reserve my place
         </div>
         <div class="hint deadline">
             Registration is open until the <em>1st of May</em>
         </div>
-    </button>
+    </app-button>
 </div>
 
-<div class="overlay" [class.hidden]="!overlayShown">
-    <h2>
-        🎉🎉🎉
-    </h2>
-    <h4>
-        Thank you for your registration!
-    </h4>
-    <p>You will receive an email with payment instructions shortly.</p>
-    <p>Once the payment is received, your place will be reserved!</p>
+<ng-template #popup>
+    <div class="overlay">
+        <h2>
+            🎉🎉🎉
+        </h2>
+        <h4>
+            Thank you for your registration!
+        </h4>
+        <p>You will receive an email with payment instructions shortly.</p>
+        <p>Once the payment is received, your place will be reserved!</p>
 
-    <button class="close" (click)="overlayShown = false">Close</button>
-</div>
+        <app-button class="close" (click)="overlay.hide()">Close</app-button>
+    </div>
+</ng-template>

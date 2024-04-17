@@ -1,0 +1,7 @@
+<ng-content></ng-content>
+
+@if (currentPopup) {
+<div class="container">
+    <ng-container *ngTemplateOutlet="currentPopup"></ng-container>
+</div>
+}

@@ -1,13 +1,30 @@
-<div class="vspace"></div>
-<section #section>
-    <div class="image" [class.alternate]="alternate" [style.background-image]="'url(' + image + ')'" #img></div>
+<div class="underlay" #underlay></div>
 
+<div class="background-container"
+     [class]="side" [class.full]="fullWidth"
+     [style.height]="backgroundHeight">
+    <div class="background" #img>
+        <ng-content select="[feature-background]"></ng-content>
+    </div>
+</div>
+
+<div [style.height]="spaceHeight" #space></div>
+
+<div [style.opacity]="labelsOpacity">
     <div class="h3 title" #title>
         <ng-content select="[feature-title]"></ng-content>
-        <!-- <div class="title-overlay"></div> -->
     </div>
-    <div class="description" [class.alternate]="alternate" #description>
-        <ng-content select="[feature-description]"></ng-content>
-        <!-- <div class="description-overlay"></div> -->
+
+    <div class="moved" [class]="side">
+        <div [class.text-right]="side === 'right'" #content>
+            <ng-content select="[feature-above]"></ng-content>
+        </div>
+        <div class="description" #content>
+            <ng-content select="[feature-card]"></ng-content>
+        </div>
     </div>
-</section>
+
+    <div class="below" #content>
+        <ng-content select="[feature-below]"></ng-content>
+    </div>
+</div>

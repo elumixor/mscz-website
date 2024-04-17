@@ -1,24 +1,40 @@
-.vspace {
-    height: 15rem;
-}
-
-section {
-    min-height: calc(var(--app-height) * 0.8);
+:host {
+    margin: 15rem 0;
+    display: block;
     position: relative;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
-.image {
+.underlay {
+    position: absolute;
+    top: -30rem;
+    left: 0;
     width: 100%;
+    height: calc(100% + 2* 30rem);
+    background: linear-gradient(180deg, transparent, var(--black) 20%, var(--black) 80%, transparent);
+    z-index: -1;
+}
+
+.background {
     height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.background-container {
     position: absolute;
     top: 0;
     left: -2rem;
-    background-position: center;
-    background-size: cover;
+    width: 100%;
 
-    &.alternate {
+    overflow: hidden;
+
+    &.left {
         left: 2rem;
+    }
+
+    &.full {
+        left: 0;
     }
 }
 
@@ -36,39 +52,22 @@ section {
     position: fixed;
     top: 2rem;
     font-size: 2.5rem;
+    pointer-events: none;
 }
 
-.description {
-    padding: 0.8rem 1rem 1.2rem;
-    color: var(--black);
-    background-color: rgb(255 255 255 / 90%);
+.moved {
     width: calc(100% - 2rem - 1rem);
     left: 2rem;
-    top: calc(var(--app-height) * 0.5);
-    font-weight: 500;
-    box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+    position: relative;
 
-    &.alternate {
+    &.left {
         left: 1rem;
     }
 }
 
-// .title-overlay {
-//     width: 100%;
-//     height: calc(100% + 5rem);
-//     position: absolute;
-//     background: linear-gradient(180deg, rgb(0 0 0 / 50%), transparent 100%);
-//     top: 0;
-//     left: 0;
-//     z-index: -4;
-// }
-
-// .description-overlay {
-//     position: absolute;
-//     left: 0;
-//     right: 0;
-//     height: calc(100% + 10rem);
-//     bottom: 0;
-//     z-index: -5;
-//     background: linear-gradient(180deg, transparent, rgb(0 0 0 / 80%) 70%);
-// }
+.description {
+    color: var(--black);
+    background-color: rgb(255 255 255 / 100%);
+    box-shadow: 4px 5px 0px var(--color-secondary);
+    margin-bottom: 1rem;
+}

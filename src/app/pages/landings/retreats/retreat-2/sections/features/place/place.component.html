@@ -1,0 +1,26 @@
+<app-feature [fullHeight]="true" [fullWidth]="true" side="center" #feature>
+
+    <app-horizontal-section class="images" [gap]="1" feature-background #horizontal>
+        @for (src of images; track $index) {
+        <img [src]="src" [alt]="'place-image-' + ($index + 1)">
+        }
+    </app-horizontal-section>
+
+    <div feature-title>{{title}}</div>
+    <div feature-card>
+        <p>{{description}}</p>
+        <div class="flex flex-end buttons">
+            <app-button (click)="showMap()">🗺️ Show Map</app-button>
+        </div>
+    </div>
+
+    <app-tab feature-below [isOpen]="showingMap" [duration]="0.5">
+        <div class="map" #map>
+            <iframe loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    [src]="googleMapsUrl">
+            </iframe>
+        </div>
+    </app-tab>
+</app-feature>

@@ -1,0 +1,21 @@
+img {
+    width: calc(100% - 2rem);
+    object-fit: cover;
+}
+
+.map {
+    width: 100%;
+    height: calc(var(--app-height) * 0.9);
+    background-color: color-mix(in srgb, transparent 50%, var(--black));
+    overflow: hidden;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}
+
+.buttons {
+    margin-top: 1rem;
+}
