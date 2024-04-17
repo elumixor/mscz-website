@@ -1,50 +1,26 @@
-<video autoplay muted loop playsinline>
-    <source src="assets/videos/retreats/retreat-1.mp4" type="video/mp4">
-    <!-- <source src="assets/videos/retreats/retreat-1.mp4" type="video/mp4"> -->
-</video>
-<div class="video-overlay"></div>
+<div class="video-container" #videoContainer>
+    <video autoplay muted loop playsinline #video>
+        <source src="assets/videos/retreats/1/compilation.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay" #videoOverlay></div>
+</div>
 
-<!-- <div class="header">
-    <app-with-icon src="ms-logo.svg" alt="ms-logo">Part of the world-wide non-profit project
-        MeditationSteps.</app-with-icon>
-</div> -->
 
-<div class="padded">
-
-    <div class="content">
-
-        <h1>Embark on a spiritual journey</h1>
-
-        <p class="subtitle">
-            Join us in the green lands of the Czech Republic for a weekend of powerful spiritual practices under the
-            guidance
-            of professional meditation teachers.
-        </p>
-
-        <div class="ms-project">
-            <app-with-icon class="ms-description" src="ms-logo.svg" alt="ms-logo">Part of the world-wide
-                project
-                <em>MeditationSteps</em></app-with-icon>
-
-            <ul>
-                <li><em>100 000+</em> practitioners</li>
-                <li><em>30+</em> countries</li>
-                <li><em>100+</em> retreats every year</li>
-                <!-- <li>YouTube channel - 10020312 subscribers</li> -->
-            </ul>
-        </div>
-    </div>
-
-    <div class="cta">
-        <p class="hint">Full price for 4 days is <em>6000 CZK / 235 EUR</em></p>
-        <p class="price-text">Reservation deposit is <em>2000 CZK / 80 EUR</em></p>
-        <button [class.pressed]="buttonPressed" (pointerdown)="buttonPressed=true" (click)="buttonPressed=false">
-            <div class="button-text">
-                Reserve a place
-            </div>
-            <div class="hint deadline">
-                Registration is open until the <em>1st of May</em>
-            </div>
-        </button>
+<div class="content" #content>
+    <h1 #title>Embark on a spiritual journey</h1>
+    <p class="subtitle" #subtitle>
+        Join us in the green lands of the Czech Republic for a weekend of powerful spiritual practices under the
+        guidance
+        of professional meditation teachers.
+    </p>
+    <div class="ms-project">
+        <app-with-icon class="ms-description" src="ms-logo.svg" alt="ms-logo" #ms>
+            Part of the world-wide project <em>MeditationSteps</em>
+        </app-with-icon>
+        <ul>
+            <li #li><em>100 000+</em> practitioners</li>
+            <li #li><em>30+</em> countries</li>
+            <li #li><em>100+</em> retreats every year</li>
+        </ul>
     </div>
 </div>

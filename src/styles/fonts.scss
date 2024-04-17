@@ -46,6 +46,10 @@ p {
         text-align: left;
     }
 
+    &-justify {
+        text-align: justify;
+    }
+
     &-small {
         font-size: var(--text-small);
     }

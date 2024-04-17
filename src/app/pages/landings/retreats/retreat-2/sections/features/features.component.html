@@ -1,13 +1,9 @@
-<app-feature image="assets/images/retreats/2/place.png">
-    <div feature-title>Recharge in the great nature</div>
-    <p feature-description>
-        In the green forests of RK Naděje you will find a place where you can relax and recharge your batteries. The
-        place is surrounded by nature and is perfect for meditation and relaxation.
-    </p>
-</app-feature>
+<app-place title="Rest. Recharge. Trully."
+           description="In the green forests of RK Naděje you will find a place where you can relax and recharge your
+                        batteries. The place is surrounded by nature and is perfect for meditation and relaxation."
+           [images]="placeImages" />
 
-
-<app-feature image="assets/images/retreats/meditating.png">
+<!-- <app-feature image="assets/images/retreats/2/place.png">
     <div feature-title>Reach your inner peace</div>
     <p feature-description>
         In the green forests of RK Naděje you will find a place where you can relax and recharge your batteries. The
@@ -15,36 +11,50 @@
     </p>
 </app-feature>
 
-<app-feature image="assets/images/retreats/meditating.png">
+<app-feature image="assets/images/retreats/food.png" [alternate]="true">
     <div feature-title>About great food</div>
     <p feature-description>
         Describe what food will be there
     </p>
-</app-feature>
+</app-feature> -->
 
-<app-feature image="assets/images/retreats/meditating.png">
-    <div feature-title>Disciplined schedule</div>
-    <p feature-description>
+
+
+<h2 class="section-title">Practice with experienced monks and yoga teachers</h2>
+
+<!-- <img src="assets/images/people/dada-sadananda.png" alt="dada-sadananda" /> -->
+<!-- <img src="assets/images/people/didi-devapriya.png" alt="didi-devapriya" /> -->
+<app-trainer image="assets/images/people/dada-sadananda.png"
+             video="assets/videos/retreats/2/invitation-dada.mp4"
+             title="Dada Sadananda"
+             invitationLanguage="RU"
+             description="Under the supervision of experienced meditation teachers Dada Sadananda and Didi Ananda Devapriya, you will
+    be able to make a significant progress in your personal growth and spiritual development. The retreat is
+    a perfect opportunity personally meet the teachers and ask all of the questions." />
+
+<app-trainer image="assets/images/people/didi-devapriya.png"
+             title="Didi Ananda Devapriya"
+             description="Under the supervision of experienced meditation teachers Dada Sadananda and Didi Ananda Devapriya, you will
+             be able to make a significant progress in your personal growth and spiritual development. The retreat is
+             a perfect opportunity personally meet the teachers and ask all of the questions."
+             side="left" />
+
+<app-feature [fullHeight]="true">
+    <img feature-background src="assets/images/retreats/meditate-2.png" alt="meditate-2" />
+    <div feature-title>Develop your body, mind, and spirit</div>
+    <p feature-card>
         Describe our schedule
     </p>
 </app-feature>
 
 
-<!-- <img src="assets/images/people/dada-sadananda.png" alt="dada-sadananda" /> -->
-<!-- <img src="assets/images/people/didi-devapriya.png" alt="didi-devapriya" /> -->
-<app-feature image="assets/images/people/dada-sadananda.png">
-    <div feature-title>Make powerful progress in your personal growth</div>
-    <p feature-description>
-        Under the supervision of experienced meditation teachers Dada Sadananda and Didi Ananda Devapriya, you will
-        be able to make a significant progress in your personal growth and spiritual development. The retreat is
-        a perfect opportunity personally meet the teachers and ask all of the questions.
-    </p>
-</app-feature>
-
-<app-feature image="assets/images/retreats/friends.png">
-    <div feature-title>Create true life-long friendships with like-minded people who share your values</div>
-    <p feature-description>
+<app-feature side="left" [fullHeight]="true">
+    <img feature-background src="assets/images/retreats/friends.png" alt="meditate-2" />
+    <div feature-title>Make Friends</div>
+    <p feature-card>
         The retreat is a perfect opportunity to meet like-minded people who share your values and interests. You
         will be able to create true life-long friendships and connections that will last a lifetime.
     </p>
 </app-feature>
+
+<div class="space"></div>

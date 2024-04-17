@@ -1,0 +1,21 @@
+<app-feature [side]="side">
+    <img feature-background class="full-img" [src]="image" [alt]="title" />
+    <div feature-title>{{title}}</div>
+
+    <ng-container feature-above>
+        @if (video) {
+        <app-icon class="video-icon" src="play.svg" (click)="showVideo()" />
+        <app-button class="button invite-button" (click)="showVideo()">
+            Watch invitation
+            <span class="badge bg-secondary">{{invitationLanguage}}</span>
+        </app-button>
+        }
+    </ng-container>
+
+    <p feature-card>{{description}}</p>
+
+    <app-tab feature-below [isOpen]="showingVideo" [duration]="0.5">
+        <app-video [src]="video" #videoRef />
+    </app-tab>
+
+</app-feature>

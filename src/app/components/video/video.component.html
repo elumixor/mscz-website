@@ -1,0 +1,7 @@
+<video (ended)="onEnded()" playsinline #video>
+    <source [src]="src" type="video/mp4" />
+    Your browser does not support the video tag.
+</video>
+<div class="video-overlay" [class.active]="!videoPlaying" (click)="toggleVideo()">
+    <app-icon class="icon" src="play.svg" />
+</div>
