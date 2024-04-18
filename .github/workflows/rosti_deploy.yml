@@ -28,8 +28,8 @@ jobs:
             - name: Setup google credentials
               run: |
                   mkdir ./secret
-                  echo ${{ secrets.GOOGLE_CRED }} > ./secret/google.credentials.json
-                  echo ${{ secrets.GOOGLE_TOKEN }} > ./secret/google.token.json
+                  echo "${{ secrets.GOOGLE_CRED }}" > ./secret/google.credentials.json
+                  echo "${{ secrets.GOOGLE_TOKEN }}" > ./secret/google.token.json
             - name: env
               run: |
                   cat << EOF > .env
