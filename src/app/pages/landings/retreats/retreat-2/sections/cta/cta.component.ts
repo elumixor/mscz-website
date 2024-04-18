@@ -74,7 +74,6 @@ export class CtaComponent implements AfterViewInit {
                     opacity: 1,
                     y: 0,
                     duration: 1,
-                    // delay: 1.5,
                 },
             );
 

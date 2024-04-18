@@ -1,7 +1,7 @@
 import { cyan, green, magenta, red } from "@elumixor/frontils";
 import express from "express";
-import cors from "cors";
 import "reflect-metadata";
+// import cors from "cors";
 
 const requestSymbol = Symbol("request");
 

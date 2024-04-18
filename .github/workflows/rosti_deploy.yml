@@ -33,12 +33,12 @@ jobs:
             - name: Create google credential
               uses: jsdaniell/create-json@1.1.2
               with:
-                  name: ".secret/cypress.json"
+                  name: ".secret/google.credentials.json"
                   json: ${{ secrets.GOOGLE_CRED }}
             - name: Create google token
               uses: jsdaniell/create-json@1.1.2
               with:
-                  name: ".secret/cypress.json"
+                  name: ".secret/google.token.json"
                   json: ${{ secrets.GOOGLE_TOKEN }}
             - name: env
               run: |
@@ -95,7 +95,7 @@ jobs:
                   rm rosti.nginx.conf
             - name: Copy code
               run: |
-                  rsync -ae "ssh -o UserKnownHostsFile=./known_hosts -p $PORT" --delete-after --exclude={.git,node_modules} ./ $USER@$HOST:/srv/app/
+                  rsync -ae "ssh -o UserKnownHostsFile=./known_hosts -p $PORT" --delete-after --exclude={.git,node_modules,src} ./ $USER@$HOST:/srv/app/
             - name: Apply changes
               run: |
                   ssh -o UserKnownHostsFile=./known_hosts -p $PORT $USER@$HOST supervisorctl reread

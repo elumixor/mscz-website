@@ -9,7 +9,7 @@
         Email is invalid
     </app-tab>
 
-    <app-button type="submit" class="submit" #submit>Reserve my place</app-button>
+    <app-button type="submit" class="submit" (click)="onSubmit()" #submit>Reserve my place</app-button>
     <p class="hint text-center after-hint">
         After registration, you will receive an email with payment instructions.
     </p>

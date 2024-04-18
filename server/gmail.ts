@@ -41,7 +41,7 @@ export class Gmail {
         const gmail = await this.gmail;
 
         // eslint-disable-next-line no-console
-        console.log("Sending email to", options.to, options.html, options.attachments);
+        console.log("Sending email to", options.to);
         await gmail.users.messages.send({
             userId: "me",
             requestBody: {
