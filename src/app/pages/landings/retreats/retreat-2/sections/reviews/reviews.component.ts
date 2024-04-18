@@ -1,5 +1,8 @@
-import { Component } from "@angular/core";
-import { HorizontalSectionComponent, ReviewComponent, type IReview } from "@components";
+import { isPlatformBrowser } from "@angular/common";
+import { Component, PLATFORM_ID, inject, signal, type OnInit } from "@angular/core";
+import { HorizontalSectionComponent, ReviewComponent } from "@components";
+import type { Review } from "@domain";
+import { NetworkService } from "@services";
 
 @Component({
     selector: "app-reviews",
@@ -8,32 +11,14 @@ import { HorizontalSectionComponent, ReviewComponent, type IReview } from "@comp
     templateUrl: "./reviews.component.html",
     styleUrl: "./reviews.component.scss",
 })
-export class ReviewsComponent {
-    readonly reviews: IReview[] = [
-        {
-            image: "assets/images/people/dada-sadananda.png",
-            text: "I have been to many retreats, but this one was the best. The location was perfect, the food was amazing, and the teachers were so knowledgeable. I can't wait to go back!",
-            name: "Dada Sadananda",
-        },
-        {
-            image: "assets/images/people/dada-sadananda.png",
-            text: "I have been to many retreats, but this one was the best. The location was perfect, the food was amazing, and the teachers were so knowledgeable. I can't wait to go back!",
-            name: "Dada Sadananda",
-        },
-        {
-            image: "assets/images/people/dada-sadananda.png",
-            text: "I have been to many retreats, but this one was the best. The location was perfect, the food was amazing, and the teachers were so knowledgeable. I can't wait to go back!",
-            name: "Dada Sadananda",
-        },
-        {
-            image: "assets/images/people/dada-sadananda.png",
-            text: "I have been to many retreats, but this one was the best. The location was perfect, the food was amazing, and the teachers were so knowledgeable. I can't wait to go back!",
-            name: "Dada Sadananda",
-        },
-        {
-            image: "assets/images/people/dada-sadananda.png",
-            text: "I have been to many retreats, but this one was the best. The location was perfect, the food was amazing, and the teachers were so knowledgeable. I can't wait to go back!",
-            name: "Dada Sadananda",
-        },
-    ];
+export class ReviewsComponent implements OnInit {
+    readonly reviews = signal([] as Review[]);
+
+    private readonly network = inject(NetworkService);
+    private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+
+    ngOnInit() {
+        if (!this.isBrowser) return;
+        void this.network.post("reviews/retreat-1").then((reviews) => this.reviews.set(reviews as Review[]));
+    }
 }

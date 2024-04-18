@@ -1,12 +1,12 @@
 :host {
-    display: flex;
-}
-
-.container {
     width: 50vw;
     padding-bottom: 2rem;
+    display: block;
 }
 
 .description {
-  text-align: justify;
+  white-space: pre-line;
+
+  max-height: calc(var(--app-height) * 0.5);
+  overflow-y: scroll;
 }

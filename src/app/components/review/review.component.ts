@@ -1,11 +1,6 @@
 import { Component, Input } from "@angular/core";
-import { AvatarComponent } from "@components/avatar/avatar.component";
-
-export interface IReview {
-    image: string;
-    text: string;
-    name: string;
-}
+import { AvatarComponent } from "@components";
+import type { Review } from "@domain";
 
 @Component({
     selector: "app-review",
@@ -15,5 +10,12 @@ export interface IReview {
     styleUrl: "./review.component.scss",
 })
 export class ReviewComponent {
-    @Input({ required: true }) review!: IReview;
+    @Input({ required: true }) review!: Review;
+
+    get image() {
+        return this.review.anonymous ? "assets/images/people/person.png" : `assets/images/people/${this.review.id}.png`;
+    }
+    get name() {
+        return this.review.anonymous ? "Anonymous" : this.review.name;
+    }
 }
