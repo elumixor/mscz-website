@@ -13,7 +13,7 @@ interface RequestMetadata {
 
 export function post(path: string) {
     return function (target: object, propertyKey: PropertyKey) {
-        const existing = Reflect.getMetadata(requestSymbol, target) ?? [];
+        const existing = (Reflect.getMetadata(requestSymbol, target) ?? []) as RequestMetadata[];
         existing.push({ path, propertyKey, method: "post" });
         Reflect.defineMetadata(requestSymbol, existing, target);
     };
@@ -22,19 +22,20 @@ export function post(path: string) {
 // The Express app is exported so that it can be used by serverless Functions.
 export class Server {
     readonly port;
-    private readonly server = express();
+    readonly server = express();
 
     constructor({ port = 4000 }: { port?: number } = {}) {
         this.port = process.env["PORT"] ?? port;
         this.server.use(express.json());
-        this.server.use(
-            cors({
-                origin: "http://172.20.17.140:4200",
-            }),
-        );
+        // this.server.use(
+        //     cors({
+        //         origin: "http://172.20.158.224:4200",
+        //     }),
+        // );
     }
 
     start() {
+        // eslint-disable-next-line no-console
         this.server.listen(this.port, () => console.log(green(`Listening on http://localhost:${this.port}`)));
     }
 
@@ -43,7 +44,8 @@ export class Server {
         const keys = (Reflect.getMetadata(requestSymbol, target) ?? []) as RequestMetadata[];
 
         for (const { path, propertyKey, method } of keys) {
-            console.log(`Registering path ${method} ${path} -> ${propertyKey}()`);
+            // eslint-disable-next-line no-console
+            console.log(`Registering path ${method} ${path} -> ${String(propertyKey)}()`);
 
             this.server[method](
                 `/api/${path}`,
@@ -58,7 +60,7 @@ export class Server {
                             // Replace :param with actual values
                             let substituted = path;
                             for (const [key, value] of Object.entries(params))
-                                substituted = substituted.replace(`:${String(key)}`, value);
+                                substituted = substituted.replace(`:${String(key)}`, String(value));
 
                             // eslint-disable-next-line no-console
                             console.log(cyan(`${date}: API request: ${substituted}`));
@@ -73,7 +75,7 @@ export class Server {
                                 ) => PromiseLike<unknown>
                             ).bind(target);
 
-                            const p = { ...req.body, ...req.params };
+                            const p = { ...req.body, ...req.params } as Record<string, unknown>;
 
                             const result = (await handler(p)) ?? {};
                             // eslint-disable-next-line no-console

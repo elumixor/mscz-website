@@ -5,58 +5,51 @@ import { fileURLToPath } from "node:url";
 import { dirname, join, resolve } from "node:path";
 import bootstrap from "../src/main.server";
 
-// The Express app is exported so that it can be used by serverless Functions.
-export function app(): express.Express {
-    const server = express();
-    const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-    const browserDistFolder = resolve(serverDistFolder, "../../browser");
-    const indexHtml = join(serverDistFolder, "index.server.html");
+import { Api } from "./api";
+import { Server } from "./server";
 
-    const commonEngine = new CommonEngine();
+// Create our server
+const server = new Server({ port: 8080 });
 
-    server.set("view engine", "html");
-    server.set("views", browserDistFolder);
+// Create a handler and register it
+const handler = new Api();
+server.registerConnections(handler);
 
-    server.use(express.static("server/public"));
-    server.use(express.static(browserDistFolder));
+const serverDistFolder = dirname(fileURLToPath(import.meta.url));
+const browserDistFolder = resolve(serverDistFolder, "../../browser");
+const indexHtml = join(serverDistFolder, "index.server.html");
 
-    // Example Express Rest API endpoints
-    // server.get("/api/**", (req, res) => {});
-    // Serve static files from /browser
-    server.get(
-        "*.*",
-        express.static(browserDistFolder, {
-            maxAge: "1y",
-        }),
-    );
+const commonEngine = new CommonEngine();
 
-    // All regular routes use the Angular engine
-    server.get("*", (req, res, next) => {
-        const { protocol, originalUrl, baseUrl, headers } = req;
+server.server.set("view engine", "html");
+server.server.set("views", browserDistFolder);
 
-        commonEngine
-            .render({
-                bootstrap,
-                documentFilePath: indexHtml,
-                url: `${protocol}://${headers.host}${originalUrl}`,
-                publicPath: browserDistFolder,
-                providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
-            })
-            .then((html) => res.send(html))
-            .catch((err) => next(err));
-    });
+server.server.use(express.static("server/public"));
+server.server.use(express.static(browserDistFolder));
 
-    return server;
-}
+// Serve static files from /browser
+server.server.get(
+    "*.*",
+    express.static(browserDistFolder, {
+        maxAge: "1y",
+    }),
+);
 
-function run(): void {
-    const port = process.env["PORT"] ?? 8080;
+// All regular routes use the Angular engine
+server.server.get("*", (req, res, next) => {
+    const { protocol, originalUrl, baseUrl, headers } = req;
 
-    // Start up the Node server
-    const server = app();
-    server.listen(port, () => {
-        console.log(`Node Express server listening on http://localhost:${port}`);
-    });
-}
+    commonEngine
+        .render({
+            bootstrap,
+            documentFilePath: indexHtml,
+            url: `${protocol}://${headers.host}${originalUrl}`,
+            publicPath: browserDistFolder,
+            providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
+        })
+        .then((html) => res.send(html))
+        .catch((err) => next(err));
+});
 
-run();
+// Start the server
+server.start();

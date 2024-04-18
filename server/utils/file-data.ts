@@ -1,10 +1,10 @@
 import fs from "fs";
 
-export type Result<T> = {
+export interface Result<T> {
     (): T;
     save(): void;
     set(data: NonNullable<T>): void;
-};
+}
 
 export function fileData<T>(file: string, options: { default: T }): Result<T>;
 export function fileData<T>(file: string, options: { required: true }): Result<T>;
@@ -20,7 +20,7 @@ export function fileData<T>(file: string, options?: { default?: T; required?: bo
         }
     } else {
         const content = fs.readFileSync(file, "utf-8");
-        value = JSON.parse(content);
+        value = JSON.parse(content) as T;
     }
 
     const getData = () => {

@@ -11,4 +11,5 @@ import { ImageComponent } from "@components/image/image.component";
 export class AvatarComponent {
     @Input({ required: true }) image!: string;
     @Input({ required: true }) name!: string;
+    @Input() size = 8;
 }

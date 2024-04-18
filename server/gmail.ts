@@ -1,25 +1,21 @@
-import { EventEmitter, all } from "@elumixor/frontils";
-import { authenticate } from "@google-cloud/local-auth";
-import fs from "fs";
+import { EventEmitter } from "@elumixor/frontils";
 import type { JWTInput, OAuth2Client } from "google-auth-library";
 import { gmail_v1, google } from "googleapis";
-import { fileData } from "./utils";
+import juice from "juice";
 import MailComposer from "nodemailer/lib/mail-composer";
 import type Mail from "nodemailer/lib/mailer";
 import path from "path";
-import juice from "juice";
+import { fileData } from "./utils";
 
 export class Gmail {
     private readonly authenticated = new EventEmitter<gmail_v1.Gmail>();
     // If modifying these scopes, delete token.json.
-    private readonly scopes = ["https://www.googleapis.com/auth/gmail.modify"];
     private readonly token = fileData<JWTInput>(".secret/google.token.json");
-    private readonly credentialsPath = ".secret/google.credentials.json";
 
     readonly gmail = this.authenticated.nextEvent;
 
     constructor() {
-        void this.authorize();
+        this.authorize();
     }
 
     async send(options: {
@@ -43,6 +39,8 @@ export class Gmail {
             .replace(/=+$/, "");
 
         const gmail = await this.gmail;
+
+        // eslint-disable-next-line no-console
         console.log("Sending email to", options.to, options.html, options.attachments);
         await gmail.users.messages.send({
             userId: "me",
@@ -52,31 +50,11 @@ export class Gmail {
         });
     }
 
-    private async authorize() {
+    private authorize() {
         const token = this.token();
-        if (token) {
-            const auth = google.auth.fromJSON(token) as OAuth2Client;
-            const gmail = google.gmail({ version: "v1", auth });
-            this.authenticated.emit(gmail);
-            return;
-        }
+        if (!token) throw new Error("No token found. Call 'npm run gmail' to authenticate.");
 
-        const auth = await authenticate({
-            scopes: this.scopes,
-            keyfilePath: this.credentialsPath,
-        });
-
-        const content = fs.readFileSync(this.credentialsPath, "utf-8");
-        const keys = JSON.parse(content);
-        const key = keys.installed || keys.web;
-
-        this.token.set({
-            type: "authorized_user",
-            client_id: key.client_id,
-            client_secret: key.client_secret,
-            refresh_token: auth.credentials.refresh_token!,
-        });
-
+        const auth = google.auth.fromJSON(token) as OAuth2Client;
         const gmail = google.gmail({ version: "v1", auth });
         this.authenticated.emit(gmail);
     }

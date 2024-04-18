@@ -10,6 +10,7 @@
         "lint": "ng lint",
         "watch": "ng build --watch --configuration development",
         "test": "jest --verbose --passWithNoTests",
+        "gmail": "bun server/gmail-authenticate.ts",
         "test:coverage": "jest --coverage",
         "test:watch": "jest --watch",
         "serve:ssr": "node dist/mscz-website/server/en/server.mjs",
