@@ -41,6 +41,7 @@ jobs:
             - name: Build
               run: |
                   npm run build
+                  ls
             - name: Setup Node.js
               run: |
                   ssh -o UserKnownHostsFile=./known_hosts -p $PORT $USER@$HOST /usr/local/bin/rosti node $NODE_VERSION
