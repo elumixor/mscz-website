@@ -1,28 +1,862 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en-US" datatype="plaintext" original="ng2.template">
-    <body>
-      <trans-unit id="2016447553270520239" datatype="html">
-        <source>CLick me</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">1,2</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="9082079347089360102" datatype="html">
-        <source>You clicked <x id="ICU" equiv-text="{count, plural, =0 {no} =1 {once} other {{{count}} times}}" xid="520602576324187119"/></source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">2</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="2470137432117667568" datatype="html">
-        <source>{VAR_PLURAL, plural, =0 {no} =1 {once} other {<x id="INTERPOLATION"/> times}}</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">2</context>
-        </context-group>
-      </trans-unit>
-    </body>
-  </file>
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+    <file id="ngi18n" original="ng.template">
+        <unit id="5945986349492910662">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/contacts/contacts.component.html:2,3
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Contacts
+                </source>
+            </segment>
+        </unit>
+        <unit id="6410276702804966058">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/contacts/contacts.component.html:3,4
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    In case of any questions, please contact us:
+                </source>
+            </segment>
+        </unit>
+        <unit id="1002165214775409029">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/contacts/contacts.component.html:8,9
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Mobile
+                </source>
+            </segment>
+        </unit>
+        <unit id="6254638605748223766">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/cta/cta.component.html:3,5
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Participate!
+                </source>
+            </segment>
+        </unit>
+        <unit id="32531961102751552">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/cta/cta.component.html:7,9
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Full price for 4 days is
+                    <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                        6000 CZK / 235 EUR
+                    </pc>
+                </source>
+            </segment>
+        </unit>
+        <unit id="2571304553449023838">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/cta/cta.component.html:11
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    The price includes 4 days of the complete retreat program, accommodation and food (3 meals per day).
+                </source>
+            </segment>
+        </unit>
+        <unit id="3244275577105306837">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/cta/cta.component.html:14,16
+                </note>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/cta/cta.component.html:48,50
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Reservation deposit is
+                    <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                        2000 CZK / 80 EUR
+                    </pc>
+                </source>
+            </segment>
+        </unit>
+        <unit id="8694128364146019184">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/cta/cta.component.html:17,19
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    <pc id="0" equivStart="START_ITALIC_TEXT" equivEnd="CLOSE_ITALIC_TEXT" type="fmt" dispStart="&lt;i&gt;" dispEnd="&lt;/i&gt;">
+                        Deposit
+            guarantees your place at the retreat.
+                    </pc>
+                </source>
+            </segment>
+        </unit>
+        <unit id="4768749765465246664">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/cta/cta.component.html:21,22
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Email
+                </source>
+            </segment>
+        </unit>
+        <unit id="8232890416577573080">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/cta/cta.component.html:26,27
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Email is invalid
+                </source>
+            </segment>
+        </unit>
+        <unit id="3274299866646555669">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/cta/cta.component.html:29
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Reserve my place
+                </source>
+            </segment>
+        </unit>
+        <unit id="2385712062725526279">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/cta/cta.component.html:36,37
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    After registration, you will receive an email with payment instructions, as well as the link to the retreat group.
+                </source>
+            </segment>
+        </unit>
+        <unit id="825883413508779021">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/cta/cta.component.html:45,47
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Full price for 4 days is
+                    <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                        6000 CZK / 235 EUR
+                    </pc>
+                </source>
+            </segment>
+        </unit>
+        <unit id="4049413377239186744">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/cta/cta.component.html:53
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Reserve my place
+                </source>
+            </segment>
+        </unit>
+        <unit id="5452929968911167629">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/cta/cta.component.html:56,58
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Registration is open until the
+                    <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                        1st of May
+                    </pc>
+                </source>
+            </segment>
+        </unit>
+        <unit id="2571377321550274891">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/cta/cta.component.html:67
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Thank you for your registration!
+                </source>
+            </segment>
+        </unit>
+        <unit id="5254934130774358084">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/cta/cta.component.html:69,70
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    You will receive an email with payment instructions shortly.
+                </source>
+            </segment>
+        </unit>
+        <unit id="8511292491485929837">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/cta/cta.component.html:70,72
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Once the payment is received, your place will be reserved!
+                </source>
+            </segment>
+        </unit>
+        <unit id="7819314041543176992">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/cta/cta.component.html:72
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Close
+                </source>
+            </segment>
+        </unit>
+        <unit id="9221730911539762110">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/faq/faq.component.html:1,3
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Frequently Asked Questions
+                </source>
+            </segment>
+        </unit>
+        <unit id="972098726412807088">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/faq/faq.component.html:4,5
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    <ph id="0" equiv="INTERPOLATION" disp="{{1}}"/>
+                    . What&apos;s included in the price? Isn&apos;t 6000 CZK too expensive?
+                </source>
+            </segment>
+        </unit>
+        <unit id="9105743881866994273">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/faq/faq.component.html:6,14
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    The fee covers accommodation, 3 meals per day, expert guidance, and transformative experiences aimed at nurturing your
+          spiritual growth over the course of 4 days. The prices is significantly lower than comparable festivals or similar programs and is
+          somewhat comparable to the regular price of a hotel stay.
+                    <ph id="0" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    <ph id="1" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    As a non-profit organization we aim at making spiritual practices accessible
+          to everyone, regardless of their financial situation. If you are experiencing financial hardship, please each out to us to discuss
+          potential discounts or payment plans.
+                </source>
+            </segment>
+        </unit>
+        <unit id="2954634446601701730">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/faq/faq.component.html:20,21
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    <ph id="0" equiv="INTERPOLATION" disp="{{2}}"/>
+                    . What is your refund policy?
+                </source>
+            </segment>
+        </unit>
+        <unit id="3806710688970897664">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/faq/faq.component.html:22,34
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    During online registration, a
+                    <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                        prepayment of 2000 CZK (80 EUR)
+                    </pc>
+                    is sufficient to guarantee your place at the
+          retreat.
+                    <ph id="1" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    <ph id="2" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    The remaining amount must be paid before the beginning of the retreat. You can pay in cash or by bank transfer.
+                    <ph id="3" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    <ph id="4" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    When canceled
+          before
+                    <pc id="5" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                        May 1st, 100% of the deposit
+                    </pc>
+                    is refunded.
+                    <ph id="6" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    <ph id="7" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    After
+                    <pc id="8" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                        May 1st
+                    </pc>
+                    , the deposit is
+                    <pc id="9" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                        non-refundable
+                    </pc>
+                    .
+                </source>
+            </segment>
+        </unit>
+        <unit id="2442318986424892194">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/faq/faq.component.html:38,39
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    <ph id="0" equiv="INTERPOLATION" disp="{{3}}"/>
+                    . I am new to these meditation practices? Will I be able to keep up?
+                </source>
+            </segment>
+        </unit>
+        <unit id="6815215805218151933">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/faq/faq.component.html:39,43
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Our programs are designed to accommodate individuals of all levels, from beginners to advanced practitioners. Our
+          experienced instructors will guide you through each practice with clarity and support, ensuring a fulfilling and enriching
+          experience for everyone.
+                </source>
+            </segment>
+        </unit>
+        <unit id="1247961541707285726">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/faq/faq.component.html:48,49
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    <ph id="0" equiv="INTERPOLATION" disp="{{4}}"/>
+                    . What should I take with me?
+                </source>
+            </segment>
+        </unit>
+        <unit id="7608581358958722160">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/faq/faq.component.html:50,83
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    <pc id="0" equivStart="START_HEADING_LEVEL5" equivEnd="CLOSE_HEADING_LEVEL5" type="other" dispStart="&lt;h5 class=&quot;non-padded&quot;&gt;" dispEnd="&lt;/h5&gt;">
+                        What to bring:
+                    </pc>
+                    <pc id="1" equivStart="START_UNORDERED_LIST" equivEnd="CLOSE_UNORDERED_LIST" type="other" dispStart="&lt;ul&gt;" dispEnd="&lt;/ul&gt;">
+                        <pc id="2" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">
+                            Yoga
+              mat
+                        </pc>
+                        <pc id="3" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">
+                            Meditation
+              cushion (if you need one)
+                        </pc>
+                        <pc id="4" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">
+                            Personal
+              hygiene items, towel
+                        </pc>
+                        <pc id="5" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">
+                            Comfortable
+              clothes for asanas
+                        </pc>
+                        <pc id="6" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">
+                            Warm
+              clothes (it can get chilly at night)
+                        </pc>
+                        <pc id="7" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">
+                            Blanket/scarf
+              to cover yourself during shavasana
+                        </pc>
+                        <pc id="8" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">
+                            Slippers
+              for indoor use
+                        </pc>
+                        <pc id="9" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">
+                            <pc id="10" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                                ID card
+                            </pc>
+                        </pc>
+                        <pc id="11" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">
+                            Musical
+              instruments (are welcomed)
+                        </pc>
+                    </pc>
+                    <pc id="12" equivStart="START_HEADING_LEVEL5_1" equivEnd="CLOSE_HEADING_LEVEL5" type="other" dispStart="&lt;h5&gt;" dispEnd="&lt;/h5&gt;">
+                        What not to bring:
+                    </pc>
+                    <pc id="13" equivStart="START_UNORDERED_LIST" equivEnd="CLOSE_UNORDERED_LIST" type="other" dispStart="&lt;ul&gt;" dispEnd="&lt;/ul&gt;">
+                        <pc id="14" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">
+                            Alcohol,
+              cigarettes, drugs
+                        </pc>
+                        <pc id="15" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">
+                            Meat,
+              fish, eggs, onion, and garlic
+                        </pc>
+                        <pc id="16" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">
+                            Perfumes,
+              cosmetics
+                        </pc>
+                    </pc>
+                    <pc id="17" equivStart="START_HEADING_LEVEL5_1" equivEnd="CLOSE_HEADING_LEVEL5" type="other" dispStart="&lt;h5&gt;" dispEnd="&lt;/h5&gt;">
+                        Clothing:
+                    </pc>
+                    <pc id="18" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">
+                        Monks
+            are present at the retreat, so you should not wear transparent, revealing, too tight clothing that attracts attention (like
+            short shorts, short skirts, tight leggings, tank tops, etc.).
+                        <ph id="19" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                        <ph id="20" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                        Your clothing should be simple, modest, and comfortable.
+                        <ph id="21" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                        <ph id="22" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                        Please do not wear perfume these days, as it is distracting at collective practices, and also odors mix when participants
+            practice together indoors.
+                    </pc>
+                </source>
+            </segment>
+        </unit>
+        <unit id="5640669047304799145">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/faq/faq.component.html:87,88
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    <ph id="0" equiv="INTERPOLATION" disp="{{5}}"/>
+                    . Can I have a special (vegan/lactose-free) diet?
+                </source>
+            </segment>
+        </unit>
+        <unit id="4958463128620964085">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/faq/faq.component.html:89,96
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Yes!
+                    <ph id="0" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    <ph id="1" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    We offer a variety of dietary options, including vegan, vegetarian, lactose-free, and gluten-free meals.
+                    <ph id="2" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    <ph id="3" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    Please
+          inform us of any special dietary requirements when registering for the retreat, and we will do our utmost to accommodate your
+          needs.
+                </source>
+            </segment>
+        </unit>
+        <unit id="6829525848545549133">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/faq/faq.component.html:111,112
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    <ph id="0" equiv="INTERPOLATION" disp="{{6}}"/>
+                    . I am an atheist and don&apos;t believe in spiritual stuff. Why would I go
+          to a retreat?
+                </source>
+            </segment>
+        </unit>
+        <unit id="3469901209511338600">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/faq/faq.component.html:112,117
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Many participants, regardless of their belief system, find value in the practices of meditation, yoga, and mindfulness for
+          their potential to reduce stress, increase mental clarity, and enhance overall well-being. Whether you&apos;re seeking inner
+          peace, stress relief, or simply a break from the hustle and bustle of daily life, our retreats offer a supportive environment for
+          exploration and self-discovery.
+                </source>
+            </segment>
+        </unit>
+        <unit id="2879571247011295571">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/features/features.component.html:2
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Rest. Recharge. Truly.
+                </source>
+            </segment>
+        </unit>
+        <unit id="8004420914839858157">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/features/features.component.html:4,12
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    In absolute seclusion - surrounded by the protected natural landscape of Žďárské vrchy - our campsite is surrounded by a
+          picturesque forest, creating a perfect, peaceful atmosphere.
+                    <ph id="0" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    <ph id="1" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    A beautiful lake just a few steps away invites for creative walks
+          during the breaks in the program.
+                    <ph id="2" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    <ph id="3" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    The shower rooms underwent a renovation, providing guests with comfort and convenience during
+          their stay.
+                </source>
+            </segment>
+        </unit>
+        <unit id="7861348857684780215">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/features/features.component.html:17,20
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Meet World-Class Yoga Teachers
+                </source>
+            </segment>
+        </unit>
+        <unit id="6346631450948436671">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/features/features.component.html:24,25
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Dada Sadananda
+                </source>
+            </segment>
+        </unit>
+        <unit id="7295349294381104375">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/features/features.component.html:27,33
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Founder of the
+                    <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                        MeditationSteps.org
+                    </pc>
+                    project, recognized in over
+                    <pc id="1" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                        30
+          countries
+                    </pc>
+                    . Yoga teacher, author of the popular free basic meditation course.
+                    <ph id="2" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    <ph id="3" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    Has been teaching yoga and meditation for
+                    <pc id="4" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                        23 years
+                    </pc>
+                    , over
+                    <pc id="5" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                        24 000 hours
+                    </pc>
+                    of meditation experience.
+                </source>
+            </segment>
+        </unit>
+        <unit id="17184682323683119">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/features/features.component.html:39
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Didi Ananda Devapriya
+                </source>
+            </segment>
+        </unit>
+        <unit id="6757539272070321562">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/features/features.component.html:40,43
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Yoga and meditation instructor
+                    <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                        since 2001
+                    </pc>
+                    .
+                    <ph id="1" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    <ph id="2" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    Works in Romania coordinating multiple social projects such as an
+          orphanage, a childcare center, a program for young people leaving orphanages and an agricultural project.
+                </source>
+            </segment>
+        </unit>
+        <unit id="8843193945356445767">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/features/features.component.html:52
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Revitalize Your Body and Mind
+                </source>
+            </segment>
+        </unit>
+        <unit id="154634602025503829">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/features/features.component.html:54,56
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Immerse yourself in our rejuvenating yoga sessions designed to elevate both your physical and mental well-being. Explore
+          the profound benefits of yoga asanas and mindfulness practices, fostering harmony between your body and mind.
+                </source>
+            </segment>
+        </unit>
+        <unit id="4831502820532227205">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/features/features.component.html:65
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Enjoy rich and delicious nutrition
+                </source>
+            </segment>
+        </unit>
+        <unit id="3621760468835682440">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/features/features.component.html:67,72
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Enjoy the pleasures of the foods, which elevate your mental state. The food is prepared with love and care, it is rich in
+          nutrients and vitamins.
+                    <ph id="0" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    <ph id="1" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    We purchase dairy products from local farmers and also offer lactose-free and gluten-free options.
+                </source>
+            </segment>
+        </unit>
+        <unit id="9022413521106852948">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/features/features.component.html:79
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Forge Lasting Connections
+                </source>
+            </segment>
+        </unit>
+        <unit id="6870003730384605455">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/features/features.component.html:81,87
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Discover a welcoming community of like-minded individuals eager to support your journey towards well-being. Engage in
+          meaningful conversations, share experiences, and forge genuine connections with fellow practitioners who embody strength,
+          kindness, and camaraderie.
+                    <ph id="0" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    <ph id="1" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>
+                    Experience the joy of friendship, camaraderie, and shared growth as you become part of our vibrant yoga
+          family, where everyone is embraced with warmth and acceptance.
+                </source>
+            </segment>
+        </unit>
+        <unit id="8873293535955527821">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/features/place/place.component.html:13
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    🗺️ Show Map
+                </source>
+            </segment>
+        </unit>
+        <unit id="2741712917951418098">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/features/trainer/trainer.component.html:11,13
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Watch invitation
+                    <pc id="0" equivStart="START_TAG_SPAN" equivEnd="CLOSE_TAG_SPAN" type="other" dispStart="&lt;span class=&quot;badge bg-secondary&quot;&gt;" dispEnd="&lt;/span&gt;">
+                        <ph id="1" equiv="INTERPOLATION" disp="{{invitationLanguage}}"/>
+                    </pc>
+                </source>
+            </segment>
+        </unit>
+        <unit id="583753285645519044">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/hero/hero.component.html:10,11
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Embark on a spiritual journey
+                </source>
+            </segment>
+        </unit>
+        <unit id="5260945761428379391">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/hero/hero.component.html:12,14
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Join us in the green lands of the Czech Republic for a weekend of powerful spiritual practices under the guidance of
+          professional meditation teachers.
+                </source>
+            </segment>
+        </unit>
+        <unit id="407037214508890782">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/hero/hero.component.html:18,19
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Part of the world-wide project
+                    <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                        MeditationSteps
+                    </pc>
+                </source>
+            </segment>
+        </unit>
+        <unit id="5848775912804144661">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/hero/hero.component.html:21,22
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                        100 000+
+                    </pc>
+                    practitioners
+                </source>
+            </segment>
+        </unit>
+        <unit id="4771213382140738980">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/hero/hero.component.html:22,23
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                        30+
+                    </pc>
+                    countries
+                </source>
+            </segment>
+        </unit>
+        <unit id="6878651404769353439">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/hero/hero.component.html:23,25
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">
+                        50+
+                    </pc>
+                    retreats every year
+                </source>
+            </segment>
+        </unit>
+        <unit id="5918171944773262568">
+            <notes>
+                <note category="location">
+                    src/app/pages/landings/retreats/retreat-2/sections/reviews/reviews.component.html:1,2
+                </note>
+            </notes>
+            <segment>
+                <source>
+                    Reviews from our participants
+                </source>
+            </segment>
+        </unit>
+    </file>
 </xliff>

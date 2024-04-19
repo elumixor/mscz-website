@@ -10,7 +10,7 @@ import { fileData } from "./utils";
 export class Gmail {
     private readonly authenticated = new EventEmitter<gmail_v1.Gmail>();
     // If modifying these scopes, delete token.json.
-    private readonly token = fileData<JWTInput>(".secret/google.token.json");
+    private readonly token = fileData<JWTInput>("secret/google.token.json");
 
     readonly gmail = this.authenticated.nextEvent;
 

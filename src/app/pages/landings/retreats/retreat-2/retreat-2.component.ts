@@ -7,9 +7,7 @@ import {
     FaqComponent,
     FeaturesComponent,
     HeroComponent,
-    PreviousRetreatComponent,
     ReviewsComponent,
-    StatsComponent,
 } from "./sections";
 
 @Component({
@@ -19,8 +17,6 @@ import {
         HeroComponent,
         FeaturesComponent,
         ReviewsComponent,
-        PreviousRetreatComponent,
-        StatsComponent,
         FaqComponent,
         CtaComponent,
         ContactsComponent,
