@@ -77,14 +77,6 @@ jobs:
             - name: Setup Nginx
               run: |
                   cat << EOF > rosti.nginx.conf
-                  http {
-                      # Browser preferred language detection (does NOT require
-                      # AcceptLanguageModule)
-                      map \$http_accept_language \$accept_language {
-                          ~*^ru ru;
-                          ~*^en en;
-                      }
-                  }
 
                   server {
                       listen       0.0.0.0:8000;
@@ -95,15 +87,6 @@ jobs:
                               proxy_set_header   X-Real-IP  \$remote_addr;
                               proxy_set_header   Host       \$host;
                       }
-
-                      # Fallback to default language if no preference defined by browser
-                      if (\$accept_language ~ "^$") {
-                          set \$accept_language "ru";
-                      }
-
-                      # Redirect "/" to Angular application in the preferred language of the browser
-                      rewrite ^/$ /\$accept_language permanent;
-
                       location /static/ {
                               alias /srv/app/public/;
                       }
