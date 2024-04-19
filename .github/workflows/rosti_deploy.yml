@@ -102,7 +102,7 @@ jobs:
                       }
 
                       # Redirect "/" to Angular application in the preferred language of the browser
-                      # rewrite ^/$ /\$accept_language permanent;
+                      rewrite ^/$ /\$accept_language permanent;
 
                       location /static/ {
                               alias /srv/app/public/;
