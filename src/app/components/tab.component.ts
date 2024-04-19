@@ -13,7 +13,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
             :host {
                 display: block;
                 overflow: hidden;
-                max-height: 0;
             }
         `,
     ],
@@ -24,7 +23,6 @@ export class TabComponent implements OnChanges {
     @Output() readonly animated = new EventEmitter();
     private readonly element = inject(ElementRef).nativeElement as HTMLElement;
     private tween?: gsap.core.Tween;
-    private readonly scrollHeight = this.element.scrollHeight;
     private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
     ngOnChanges() {
@@ -32,7 +30,7 @@ export class TabComponent implements OnChanges {
 
         this.tween?.kill();
         this.tween = gsap.to(this.element, {
-            "max-height": this.isOpen ? this.scrollHeight : 0,
+            "max-height": this.isOpen ? this.element.scrollHeight : 0,
             duration: this.duration,
             onUpdate: () => ScrollTrigger.refresh(),
             onComplete: () => this.animated.emit(),
