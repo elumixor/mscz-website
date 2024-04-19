@@ -36,7 +36,7 @@
             },
             "architect": {
                 "build": {
-                    "builder": "@angular-devkit/build-angular:application",
+                    "builder": "@ngx-env/builder:application",
                     "options": {
                         "outputPath": "dist/mscz-website",
                         "index": "src/index.html",
@@ -82,12 +82,11 @@
                     "defaultConfiguration": "production"
                 },
                 "serve": {
-                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "builder": "@ngx-env/builder:dev-server",
                     "options": {
                         "browserTarget": "mscz-website:build",
-                        "proxyConfig": "src/proxy.conf.json",
                         "host": "0.0.0.0",
-                        "port": 4200
+                        "port": 8080
                     },
                     "configurations": {
                         "production": {
@@ -103,7 +102,7 @@
                     "defaultConfiguration": "development"
                 },
                 "extract-i18n": {
-                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "builder": "@ngx-env/builder:extract-i18n",
                     "options": {
                         "buildTarget": "mscz-website:build"
                     }

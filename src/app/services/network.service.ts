@@ -8,9 +8,7 @@ import { lastValueFrom } from "rxjs";
 })
 export class NetworkService {
     private readonly http = inject(HttpClient);
-    private readonly url = isDevMode() ? "http://172.20.158.224:4000" : "";
-    // private readonly url = "http://172.20.158.224:4000";
-    // private readonly url = "";
+    private readonly url = isDevMode() ? `http://${import.meta.env.NG_APP_URL}:4000` : "";
 
     // Helpers
     async post<T = unknown>(path: string, params?: Record<string, unknown>) {

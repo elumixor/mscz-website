@@ -1,7 +1,7 @@
 import { cyan, green, magenta, red } from "@elumixor/frontils";
 import express from "express";
 import "reflect-metadata";
-// import cors from "cors";
+import cors from "cors";
 
 const requestSymbol = Symbol("request");
 
@@ -27,11 +27,17 @@ export class Server {
     constructor({ port = 4000 }: { port?: number } = {}) {
         this.port = process.env["PORT"] ?? port;
         this.server.use(express.json());
-        // this.server.use(
-        //     cors({
-        //         origin: "http://172.20.158.224:4200",
-        //     }),
-        // );
+
+        const ip = process.env["IP"];
+        if (ip) {
+            // eslint-disable-next-line no-console
+            console.log(green(`Whitelisting ${ip}`));
+            this.server.use(
+                cors({
+                    origin: `http://${ip}:8080`,
+                }),
+            );
+        }
     }
 
     start() {
