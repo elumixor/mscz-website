@@ -24,7 +24,7 @@ export class VideoComponent {
     }
 
     play() {
-        gsap.to(window, { duration: 1, scrollTo: { y: this.element } });
+        gsap.to(window, { duration: 1, scrollTo: { y: this.element, offsetY: 10 } });
         void this.video.nativeElement.play();
 
         if (!this.gsapRegistered) {

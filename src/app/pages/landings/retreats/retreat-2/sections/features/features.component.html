@@ -1,60 +1,92 @@
-<app-place title="Rest. Recharge. Trully."
-           description="In the green forests of RK Naděje you will find a place where you can relax and recharge your
-                        batteries. The place is surrounded by nature and is perfect for meditation and relaxation."
-           [images]="placeImages" />
-
-<!-- <app-feature image="assets/images/retreats/2/place.png">
-    <div feature-title>Reach your inner peace</div>
-    <p feature-description>
-        In the green forests of RK Naděje you will find a place where you can relax and recharge your batteries. The
-        place is surrounded by nature and is perfect for meditation and relaxation.
-    </p>
-</app-feature>
-
-<app-feature image="assets/images/retreats/food.png" [alternate]="true">
-    <div feature-title>About great food</div>
-    <p feature-description>
-        Describe what food will be there
-    </p>
-</app-feature> -->
+<app-place [images]="placeImages">
+    <ng-container title>Rest. Recharge. Truly.</ng-container>
+    <ng-container description>
+        In absolute seclusion - surrounded by the protected natural landscape of Žďárské vrchy - our campsite is
+        surrounded by a picturesque forest, creating a perfect, peaceful atmosphere.
+        <br>
+        <br>
+        A beautiful lake just a few steps away invites for creative walks during the breaks in the program.
+        <br>
+        <br>
+        The shower rooms underwent a renovation, providing guests with comfort and convenience during their stay.
+    </ng-container>
+</app-place>
 
 
 
-<h2 class="section-title">Practice with experienced monks and yoga teachers</h2>
+<h2 class="section-title">Meet World-Class Yoga Teachers</h2>
 
-<!-- <img src="assets/images/people/dada-sadananda.png" alt="dada-sadananda" /> -->
-<!-- <img src="assets/images/people/didi-devapriya.png" alt="didi-devapriya" /> -->
+
 <app-trainer image="assets/images/people/dada-sadananda.png"
              video="assets/videos/retreats/2/invitation-dada.mp4"
-             title="Dada Sadananda"
-             invitationLanguage="RU"
-             description="Under the supervision of experienced meditation teachers Dada Sadananda and Didi Ananda Devapriya, you will
-    be able to make a significant progress in your personal growth and spiritual development. The retreat is
-    a perfect opportunity personally meet the teachers and ask all of the questions." />
+             invitationLanguage="RU">
+    <ng-container title>
+        Dada Sadananda
+    </ng-container>
+    <ng-container description>
+        Founder of the <em>MeditationSteps.org</em> project, recognized in over <em>30 countries</em>. Yoga teacher,
+        author of the popular free basic meditation course.
+        <br>
+        <br>
+        Has been teaching yoga and meditation for <em>23 years</em>, over <em>24 000 hours</em> of meditation
+        experience.
+    </ng-container>
+
+</app-trainer>
 
 <app-trainer image="assets/images/people/didi-devapriya.png"
-             title="Didi Ananda Devapriya"
-             description="Under the supervision of experienced meditation teachers Dada Sadananda and Didi Ananda Devapriya, you will
-             be able to make a significant progress in your personal growth and spiritual development. The retreat is
-             a perfect opportunity personally meet the teachers and ask all of the questions."
-             side="left" />
+             side="left">
+    <ng-container title>Didi Ananda Devapriya</ng-container>
+    <ng-container description>Yoga and meditation instructor <em>since 2001</em>.
+        <br><br>
+        Works in Romania coordinating multiple social projects such as an orphanage, a childcare center, a program for
+        young people leaving orphanages and an agricultural project.
+    </ng-container>
+</app-trainer>
 
-<app-feature [fullHeight]="true">
-    <img feature-background src="assets/images/retreats/meditate-2.png" alt="meditate-2" />
-    <div feature-title>Develop your body, mind, and spirit</div>
-    <p feature-card>
-        Describe our schedule
-    </p>
+
+
+
+<app-feature>
+    <img feature-background src="assets/images/retreats/asanas.png" alt="asanas" />
+    <ng-container feature-title>Revitalize Your Body and Mind</ng-container>
+    <ng-container feature-card>
+        Immerse yourself in our rejuvenating yoga sessions designed to elevate both your physical and mental well-being.
+        Explore the profound benefits of yoga asanas and mindfulness practices, fostering harmony between your body and
+        mind.
+    </ng-container>
 </app-feature>
 
 
-<app-feature side="left" [fullHeight]="true">
-    <img feature-background src="assets/images/retreats/friends.png" alt="meditate-2" />
-    <div feature-title>Make Friends</div>
-    <p feature-card>
-        The retreat is a perfect opportunity to meet like-minded people who share your values and interests. You
-        will be able to create true life-long friendships and connections that will last a lifetime.
-    </p>
+
+
+<app-feature side="left">
+    <img feature-background src="assets/images/retreats/food.png" alt="food" />
+    <ng-container feature-title>Enjoy rich and delicious nutrition</ng-container>
+    <ng-container feature-card>
+        Enjoy the pleasures of the foods, which elevate your mental state.
+        The food is prepared with love and care, it is rich in nutrients and vitamins.
+        <br>
+        <br>
+        We purchase dairy products from local farmers and also offer lactose-free and gluten-free options.
+    </ng-container>
 </app-feature>
+
+
+
+<app-feature>
+    <img feature-background src="assets/images/retreats/friends.png" alt="friends" />
+    <ng-container feature-title>Forge Lasting Connections</ng-container>
+    <ng-container feature-card>
+        Discover a welcoming community of like-minded individuals eager to support your journey towards well-being.
+        Engage in meaningful conversations, share experiences, and forge genuine connections with fellow practitioners
+        who embody strength, kindness, and camaraderie.
+        <br>
+        <br>
+        Experience the joy of friendship, camaraderie, and shared
+        growth as you become part of our vibrant yoga family, where everyone is embraced with warmth and acceptance.
+    </ng-container>
+</app-feature>
+
 
 <div class="space"></div>

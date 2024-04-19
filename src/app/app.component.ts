@@ -17,6 +17,9 @@ export class AppComponent {
     private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
     private readonly ngZone = inject(NgZone);
     private readonly titleService = inject(Title);
+
+    readonly googleMapsApiKey = "AIzaSyCpDBWmjiqXfaQaLVUOlgbVXVggy6P2rds";
+
     constructor() {
         this.titleService.setTitle("MeditationSteps.cz");
 

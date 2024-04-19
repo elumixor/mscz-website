@@ -11,5 +11,10 @@ import { TrainerComponent } from "./trainer/trainer.component";
     styleUrl: "./features.component.scss",
 })
 export class FeaturesComponent {
-    readonly placeImages = ["assets/images/retreats/2/place.png", "assets/images/retreats/2/place-2.png"];
+    readonly placeImages = [
+        "assets/images/retreats/2/place.png",
+        "assets/images/retreats/2/place-2.png",
+        "assets/images/retreats/2/place-4.png",
+        "assets/images/retreats/2/place-3.png",
+    ];
 }

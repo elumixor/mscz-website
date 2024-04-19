@@ -145,7 +145,7 @@ export class FeatureComponent implements AfterViewInit {
                     trigger: this.img.nativeElement,
                     start: "-25% 50%",
                     end: "10% 50%",
-                    scrub: true,
+                    scrub: 1,
                 },
                 x: 0,
                 opacity: 1,

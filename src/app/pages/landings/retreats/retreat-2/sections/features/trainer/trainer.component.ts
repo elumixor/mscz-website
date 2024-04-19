@@ -9,8 +9,6 @@ import { ButtonComponent, FeatureComponent, IconComponent, TabComponent, VideoCo
     styleUrl: "./trainer.component.scss",
 })
 export class TrainerComponent {
-    @Input({ required: true }) title!: string;
-    @Input({ required: true }) description!: string;
     @Input({ required: true }) image!: string;
     @Input() video?: string;
     @Input() invitationLanguage?: string;

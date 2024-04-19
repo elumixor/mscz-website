@@ -6,9 +6,9 @@
         }
     </app-horizontal-section>
 
-    <div feature-title>{{title}}</div>
+    <ng-content feature-title select="[title]"></ng-content>
     <div feature-card>
-        <p>{{description}}</p>
+        <p><ng-content select="[description]"></ng-content></p>
         <div class="flex flex-end buttons">
             <app-button (click)="showMap()">🗺️ Show Map</app-button>
         </div>

@@ -1,6 +1,8 @@
 <app-feature [side]="side">
-    <img feature-background class="full-img" [src]="image" [alt]="title" />
-    <div feature-title>{{title}}</div>
+    <img feature-background class="full-img" [src]="image" alt="trainer-image" />
+    <div feature-title>
+        <ng-content select="[title]"></ng-content>
+    </div>
 
     <ng-container feature-above>
         @if (video) {
@@ -12,10 +14,14 @@
         }
     </ng-container>
 
-    <p feature-card>{{description}}</p>
+    <p feature-card>
+        <ng-content select="[description]"></ng-content>
+    </p>
 
     <app-tab feature-below [isOpen]="showingVideo" [duration]="0.5">
-        <app-video [src]="video" #videoRef />
+        <div class="video-container">
+            <app-video [src]="video" #videoRef />
+        </div>
     </app-tab>
 
 </app-feature>

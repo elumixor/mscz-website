@@ -1,5 +1,7 @@
 img {
-    width: calc(100% - 2rem);
+    min-width: calc(100% - 2rem);
+    max-width: calc(150% - 2rem);
+    flex-grow: 1;
     object-fit: cover;
 }
 
