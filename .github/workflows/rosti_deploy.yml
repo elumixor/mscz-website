@@ -83,18 +83,18 @@ jobs:
                       listen       [::]:8000;
 
                       # Fallback to default language if no preference defined by browser
-                      if ($http_accept_language ~ "^$") {
-                          set $accept_language "en";
+                      if (\$http_accept_language ~ "^$") {
+                          set \$accept_language "en";
                       }
-                      if ($http_accept_language ~ "^ru") {
-                          set $accept_language "ru";
+                      if (\$http_accept_language ~ "^ru") {
+                          set \$accept_language "ru";
                       }
-                      if ($http_accept_language ~ "^en") {
-                          set $accept_language "en";
+                      if (\$http_accept_language ~ "^en") {
+                          set \$accept_language "en";
                       }
 
                       # Redirect "/" to Angular application in the preferred language of the browser
-                      rewrite ^/$ $scheme://$http_host/$accept_language permanent;
+                      rewrite ^/$ \$scheme://\$http_host/\$accept_language permanent;
 
 
                       location ~ ^/(ru|en) {
