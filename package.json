@@ -6,7 +6,7 @@
         "start": "npm run serve:ssr",
         "build": "ng build",
         "dev": "concurrently \"npm run dev:front\" \"npm run dev:back\"",
-        "dev:front": "NG_APP_URL=$(ip addr show eth0 | grep -oP '(?<=inet\\s)\\d+(\\.\\d+){3}') ng serve --configuration=ru",
+        "dev:front": "NG_APP_URL=$(ip addr show eth0 | grep -oP '(?<=inet\\s)\\d+(\\.\\d+){3}') ng serve",
         "dev:back": "IP=$(ip addr show eth0 | grep -oP '(?<=inet\\s)\\d+(\\.\\d+){3}') bun run server/main-dev.ts",
         "dev:ru": "ng serve --configuration=ru",
         "lint": "ng lint",

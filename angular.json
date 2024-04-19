@@ -50,6 +50,7 @@
                         "server": "src/main.server.ts",
                         "prerender": true,
                         "localize": true,
+                        "i18nMissingTranslation": "warning",
                         "ssr": {
                             "entry": "server/main.ts"
                         }
