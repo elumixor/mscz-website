@@ -11,6 +11,6 @@ import { AvatarComponent, IconComponent } from "@components";
 export class ContactsComponent {
     readonly contact = {
         name: "Sergey",
-        phone: "+420 123 456 789",
+        phone: "+420 774 947 327",
     };
 }

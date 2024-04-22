@@ -30,7 +30,7 @@
                 "sourceLocale": "en",
                 "locales": {
                     "ru": {
-                        "translation": "src/locale/messages.ru.xlf"
+                        "translation": "src/locale/messages.ru.json"
                     }
                 }
             },

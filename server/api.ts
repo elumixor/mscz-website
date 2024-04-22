@@ -5,7 +5,8 @@ import fs from "fs";
 
 export class Api {
     private readonly gmail = new Gmail();
-    private readonly paymentHTML = fs.readFileSync("./emails/payment/email.html", "utf-8");
+    // private readonly paymentHTML = fs.readFileSync("./emails/payment/email.html", "utf-8");
+    private readonly paymentHTML = fs.readFileSync("./emails/payment/email.ru.html", "utf-8");
 
     private readonly reviewsMap = {
         "retreat-1": this.readReviews("retreat-1"),
@@ -19,7 +20,8 @@ export class Api {
         console.log("Registering user with email", email);
         await this.gmail.send({
             to: email,
-            subject: "May Retreat - Payment information | MeditationSteps.cz",
+            // subject: "May Retreat - Payment information | MeditationSteps.cz",
+            subject: "Майский ретрит - Информация об оплате | MeditationSteps.cz",
             html: this.paymentHTML,
         });
     }
