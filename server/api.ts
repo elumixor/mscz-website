@@ -5,8 +5,14 @@ import fs from "fs";
 
 export class Api {
     private readonly gmail = new Gmail();
-    // private readonly paymentHTML = fs.readFileSync("./emails/payment/email.html", "utf-8");
-    private readonly paymentHTML = fs.readFileSync("./emails/payment/email.ru.html", "utf-8");
+
+    private readonly paymentHTMLs = new Map(
+        ["en", "ru"].map((lang) => [lang, fs.readFileSync(`./emails/payment/email.${lang}.html`, "utf-8")]),
+    );
+
+    private readonly subjects = new Map(
+        [...this.paymentHTMLs].map(([lang, html]) => [lang, html.match(/<title>(.*?)<\/title>/)?.[1]]),
+    );
 
     private readonly reviewsMap = {
         "retreat-1": this.readReviews("retreat-1"),
@@ -15,14 +21,17 @@ export class Api {
     };
 
     @post("register")
-    async register({ email }: { email: string }) {
+    async register({ email, language }: { email: string; language: string }) {
         // eslint-disable-next-line no-console
         console.log("Registering user with email", email);
+
+        const html = this.paymentHTMLs.get(language)!;
+        const subject = this.subjects.get(language)!;
+
         await this.gmail.send({
             to: email,
-            // subject: "May Retreat - Payment information | MeditationSteps.cz",
-            subject: "Майский ретрит - Информация об оплате | MeditationSteps.cz",
-            html: this.paymentHTML,
+            subject,
+            html,
         });
     }
 
