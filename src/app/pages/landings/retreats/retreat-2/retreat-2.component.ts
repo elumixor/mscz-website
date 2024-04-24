@@ -29,7 +29,7 @@ export class Retreat2Component {
     private readonly title = inject(Title);
 
     constructor() {
-        this.title.setTitle("Retreat in May | MeditationSteps.cz");
+        this.title.setTitle($localize`Retreat in May | MeditationSteps.cz`);
     }
 
     readonly place = {
