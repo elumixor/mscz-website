@@ -1,0 +1,29 @@
+$border-1: var(--border-top-left, var(--border-small));
+$border-2: var(--border-top-right, var(--border-small));
+$border-3: var(--border-bottom-right, var(--border-small));
+$border-4: var(--border-bottom-left, var(--border-small));
+$border: $border-1 $border-2 $border-3 $border-4;
+
+.border {
+    $bp: var(--border-padding, 1rem);
+    $bw: var(--border-width, 2px);
+
+    position: absolute;
+    width: calc(100% + 2 * #{$bp});
+    height: calc(100% + 2 * #{$bp});
+    top: calc(-1 * #{$bp});
+    left: calc(-1 * #{$bp});
+
+    border: #{$bw} solid var(--secondary);
+    border-radius: $border;
+
+    pointer-events: none;
+}
+
+:host {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+}

@@ -4,9 +4,9 @@
     cursor: pointer;
     font-size: 1rem;
     padding: 0.5rem 1rem;
-    border: 2px solid var(--color-secondary);
+    border: 2px solid var(--secondary);
     border-radius: 5rem;
-    color: var(--color-secondary);
+    color: var(--secondary);
     font-weight: bold;
     background-color: transparent;
     transition: all 0.2s;
@@ -17,7 +17,7 @@
     }
 
     &:hover, &:focus {
-        // border: 2px solid var(--color-secondary);
+        // border: 2px solid var(--secondary);
         // box-shadow: 0 0 5px rgba(0, 0, 0, 0.342);
     }
 
@@ -31,7 +31,7 @@
     }
 
     &.pressed {
-        // background-color: var(--color-secondary);
+        // background-color: var(--secondary);
         transform: scale(0.95);
         // color: white;
     }

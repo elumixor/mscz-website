@@ -1,0 +1,40 @@
+<app-feature [marginTop]="marginTop" [marginBottom]="marginBottom">
+    <ng-content title select="[title]"></ng-content>
+
+    <ng-container content>
+        <app-horizontal-section [gap]="1" background #horizontal>
+            <app-image [bordered]="false" src="assets/images/retreats/2/place.png" />
+            <app-image [bordered]="false" src="assets/images/retreats/2/place-2.png" />
+            <app-image [bordered]="false" src="assets/images/retreats/2/place-4.png" />
+            <app-image [bordered]="false" src="assets/images/retreats/2/place-3.png" />
+        </app-horizontal-section>
+
+        <app-card side="center">
+            <p><ng-content select="[description]"></ng-content></p>
+        </app-card>
+
+        <div class="buttons flex flex-center gap-1 flex-wrap">
+            <app-button (click)="toggleMap()" i18n>🗺️ {{this.showingMap ? this.hide : this.show}} Map</app-button>
+            <app-button (click)="toggleDirections()" i18n>🎯 {{this.showingDirections ? this.hide : this.show}}
+                Directions</app-button>
+        </div>
+
+        <app-tab feature-below [isOpen]="showingMap" [duration]="0.5">
+            <div class="map" #map>
+                <iframe loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        [src]="googleMapsUrl">
+                </iframe>
+            </div>
+        </app-tab>
+
+
+        <app-tab feature-below [isOpen]="showingDirections" [duration]="0.5">
+            <app-card side="center" [adjust]="true" #directions>
+                <p><ng-content select="[location]"></ng-content></p>
+            </app-card>
+        </app-tab>
+    </ng-container>
+
+</app-feature>

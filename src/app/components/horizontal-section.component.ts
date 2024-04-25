@@ -25,5 +25,5 @@ import { Component, HostBinding, Input } from "@angular/core";
 export class HorizontalSectionComponent {
     @HostBinding("style.gap.rem")
     @Input()
-    gap = 1;
+    gap?: number;
 }

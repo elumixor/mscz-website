@@ -1,75 +1,24 @@
 :host {
-    margin: 15rem 0;
+    $m: calc(0.8 * var(--app-height));
+
     display: block;
     position: relative;
     overflow-x: clip;
-}
+    background: var(--white);
+    margin: 0;
+    padding: 5rem 0;
 
-.underlay {
-    position: absolute;
-    top: -30rem;
-    left: 0;
-    width: 100%;
-    height: calc(100% + 2* 30rem);
-    background: linear-gradient(180deg, transparent, var(--black) 20%, var(--black) 80%, transparent);
-    z-index: -1;
-}
-
-.background {
-    height: 100%;
-    display: flex;
-    align-items: stretch;
-}
-
-.background-container {
-    position: absolute;
-    top: 0;
-    left: -2rem;
-    width: 100%;
-
-    overflow: hidden;
-
-    &.left {
-        left: 2rem;
+    &.margin-top {
+        margin-top: $m;
     }
 
-    &.full {
-        left: 0;
+    &.margin-bottom {
+        margin-bottom: $m;
     }
-}
-
-.title, .description {
-    color: white;
-    position: relative;
-    padding: var(--padding);
-    text-shadow: 0 0 2rem rgb(0 0 0 / 50%);
-    white-space: pre-line;
 }
 
 .title {
-    width: 100%;
-    margin-top: 0;
-    padding: 2rem 10%;
-    position: fixed;
-    top: 2rem;
-    font-size: 2.5rem;
-    pointer-events: none;
-    opacity: 0;
-}
-
-.moved {
-    width: calc(100% - 2rem - 1rem);
-    left: 2rem;
-    position: relative;
-
-    &.left {
-        left: 1rem;
-    }
-}
-
-.description {
     color: var(--black);
-    background-color: rgb(255 255 255 / 100%);
-    box-shadow: 4px 5px 0px var(--color-secondary);
-    margin-bottom: 1rem;
+    width: 90%;
+    margin: 0 var(--padding) 3rem;
 }

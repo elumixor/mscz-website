@@ -5,12 +5,6 @@
         "outDir": "./out-tsc/app",
         "types": ["node", "@angular/localize"]
     },
-    "files": [
-        "src/main.ts",
-        "src/main.server.ts",
-        "server/main.ts",
-        "server/main-dev.ts",
-        "server/gmail-authenticate.ts"
-    ],
+    "files": ["src/main.ts", "src/main.server.ts", "server/main.ts", "server/gmail/authenticate.ts"],
     "include": ["src/**/*.d.ts"]
 }

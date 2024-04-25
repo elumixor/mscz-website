@@ -6,6 +6,7 @@ import { FooterComponent, OverlayComponent } from "@components";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { isMobile } from "@utils";
 
 @Component({
     selector: "app-root",
@@ -28,11 +29,10 @@ export class AppComponent {
         this.ngZone.runOutsideAngular(() => {
             document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`);
 
-            document.addEventListener("resize", () =>
-                document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`),
-            );
-
-            // window.onbeforeunload = () => window.scrollTo(0, 0);
+            if (!isMobile())
+                window.addEventListener("resize", () => {
+                    document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`);
+                });
 
             gsap.registerPlugin(ScrollTrigger);
             gsap.registerPlugin(ScrollToPlugin);

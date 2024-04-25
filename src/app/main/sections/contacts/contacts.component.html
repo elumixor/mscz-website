@@ -1,0 +1,21 @@
+<div class="text-center">
+    <h3 class="text-huge" i18n>Contacts</h3>
+    <p class="mb-2" i18n>In case of any questions, please contact us:</p>
+    <app-avatar image="assets/images/people/contact.png" [name]="contact.name" />
+    <p>
+        <a href="https://t.me/Sandi_pan" target="_blank" rel="noopener noreferrer">Telegram</a> /
+        <a href="https://wa.me/420774947327" target="_blank" rel="noopener noreferrer">WhatsApp</a> /
+        <a href="tel:+420774947327" target="_blank" rel="noopener noreferrer" i18n>Mobile</a>
+    </p>
+
+    <br>
+    <p>{{contact.phone}}</p>
+    <br>
+    <div class="social">
+        <a href="https://t.me/Sandi_pan" target="_blank" rel="noopener noreferrer"><app-icon src="telegram.svg" /></a>
+        <a href="https://wa.me/420774947327" target="_blank" rel="noopener noreferrer"><app-icon
+                      src="whatsapp.svg" /></a>
+        <a href="tel:+420774947327" target="_blank" rel="noopener noreferrer"><app-icon src="phone.svg" /></a>
+    </div>
+
+</div>

@@ -1,0 +1,23 @@
+.section-title {
+    color: white;
+    padding: var(--padding);
+    text-align: center;
+    margin: 2rem 0;
+}
+
+
+app-image {
+    max-height: 50rem;
+    overflow: hidden;
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 0.5rem 0;
+    line-height: 1.2;
+}

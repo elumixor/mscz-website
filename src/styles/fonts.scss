@@ -1,60 +1,49 @@
+$sizes: (
+    "normal": 1rem,
+    "small": 0.9rem,
+    "smaller": 0.8rem,
+    "big": 1.2rem,
+    "bigger": 1.5rem,
+    "huge": 2rem,
+    "impact": 3rem,
+);
+
 :root {
     font-family: "Roboto", sans-serif;
 
-    --text-small: 0.9rem;
-    --text-smaller: 0.8rem;
+    @each $size, $value in $sizes {
+        --text-#{$size}: #{$value};
+    }
 }
 
-h1, .h1 {
-    font-size: 3rem;
+@each $align in (center, right, left, justify) {
+    .text-#{$align} {
+        text-align: $align;
+    }
+}
+
+@each $size, $value in $sizes {
+    .text-#{$size} {
+        font-size: $value;
+    }
+}
+
+.bold {
     font-weight: bold;
-    line-height: 1;
-    margin-bottom: 2rem;
-    margin-top: 0.5rem;
 }
 
-h2, .h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    line-height: 1;
-    margin-bottom: 1.5rem;
-    margin-top: 0.5rem;
+.italic {
+    font-style: italic;
 }
 
-h3, .h3 {
-    font-size: 2rem;
-    font-weight: bold;
-    line-height: 1;
-    margin-bottom: 1rem;
-    margin-top: 0.5rem;
+.underline {
+    text-decoration: underline;
 }
 
-p {
-    line-height: 1.2;
-}
+.text-shadow {
+    text-shadow: 0 0 2rem rgb(0 0 0 / 0.5);
 
-.text {
-    &-center {
-        text-align: center;
-    }
-
-    &-right {
-        text-align: right;
-    }
-
-    &-left {
-        text-align: left;
-    }
-
-    &-justify {
-        text-align: justify;
-    }
-
-    &-small {
-        font-size: var(--text-small);
-    }
-
-    &-smaller {
-        font-size: var(--text-smaller);
+    &-strong {
+        text-shadow: 0 0 2rem rgb(0 0 0 / 0.75);
     }
 }

@@ -1,4 +1,4 @@
-export * from "./feature/feature.component";
+export * from "./feature";
 export * from "./footer/footer.component";
 export * from "./horizontal-section.component";
 export * from "./accordion/accordion.component";

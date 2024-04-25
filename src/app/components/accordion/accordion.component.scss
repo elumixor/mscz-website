@@ -6,7 +6,7 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .icon {
@@ -15,6 +15,9 @@
     font-size: 1.5rem;
     font-weight: 100;
     transition: transform 0.3s;
+    width: 2rem;
+    height: 2rem;
+    display: block;
 
     &.active {
         transform: rotate(45deg);

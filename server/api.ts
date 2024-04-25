@@ -1,6 +1,6 @@
 import type { Review } from "@domain";
 import { Gmail } from "./gmail";
-import { post } from "./server";
+import { request } from "./server";
 import fs from "fs";
 
 export class Api {
@@ -20,7 +20,7 @@ export class Api {
         didi: this.readReviews("didi"),
     };
 
-    @post("register")
+    @request("register")
     async register({ email, language }: { email: string; language: string }) {
         // eslint-disable-next-line no-console
         console.log("Registering user with email", email);
@@ -35,7 +35,7 @@ export class Api {
         });
     }
 
-    @post("reviews/:kind")
+    @request("reviews/:kind")
     reviews({ kind }: { kind: keyof Api["reviewsMap"] }) {
         return this.reviewsMap[kind];
     }

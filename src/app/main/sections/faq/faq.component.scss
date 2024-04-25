@@ -1,0 +1,46 @@
+:host {
+    display: block;
+    padding-top: 1rem;
+    background-color: white;
+}
+
+h3 {
+    padding: var(--padding);
+    text-align: center;
+}
+
+h4 {
+    padding: 2em var(--padding);
+    margin: 0;
+    cursor: pointer;
+}
+
+h5 {
+    font-size: 1rem;
+    padding: var(--padding) 0;
+}
+
+.section {
+    padding: calc(2 * var(--padding));
+    padding-top: 0;
+    margin-top: 0;
+}
+
+hr {
+    color: white;
+    margin: 0 var(--padding);
+}
+
+ul {
+    list-style-position: outside;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-left: 1em;
+}
+
+.non-padded {
+    padding-top: 0;
+}

@@ -1,45 +1,45 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "sourceMap": true,
-    "declaration": false,
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "ES2022",
-    "module": "ES2022",
-    "useDefineForClassFields": false,
-    "verbatimModuleSyntax": true,
-    "lib": ["ES2022", "dom"],
-    "paths": {
-      "@styles/*": ["./src/styles/*"],
-      "@utils": ["./src/utils"],
-      "@utils/*": ["./src/utils/*"],
-      "@domain": ["./src/domain"],
-      "@domain/*": ["./src/domain/*"],
-      "@components": ["./src/app/components"],
-      "@components/*": ["./src/app/components/*"],
-      "@pages": ["./src/app/pages"],
-      "@pages/*": ["./src/app/pages/*"],
-      "@services": ["./src/app/services"],
-      "@services/*": ["./src/app/services/*"],
-      "@animations": ["./src/app/animations"]
+    "compileOnSave": false,
+    "compilerOptions": {
+        "outDir": "./dist/out-tsc",
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noImplicitOverride": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "sourceMap": true,
+        "declaration": false,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "target": "ES2022",
+        "module": "ES2022",
+        "useDefineForClassFields": false,
+        "verbatimModuleSyntax": true,
+        "lib": ["ES2022", "dom"],
+        "paths": {
+            "@styles/*": ["./src/styles/*"],
+            "@utils": ["./src/app/utils"],
+            "@utils/*": ["./src/app/utils/*"],
+            "@domain": ["./src/app/domain"],
+            "@domain/*": ["./src/app/domain/*"],
+            "@components": ["./src/app/components"],
+            "@components/*": ["./src/app/components/*"],
+            "@pages": ["./src/app/pages"],
+            "@pages/*": ["./src/app/pages/*"],
+            "@services": ["./src/app/services"],
+            "@services/*": ["./src/app/services/*"],
+            "@animations": ["./src/app/animations"]
+        }
+    },
+    "angularCompilerOptions": {
+        "enableI18nLegacyMessageIdFormat": false,
+        "strictInjectionParameters": true,
+        "strictInputAccessModifiers": true,
+        "strictTemplates": true
     }
-  },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
-  }
 }

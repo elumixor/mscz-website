@@ -1,7 +1,7 @@
 <div class="title" (pointerup)="isOpen = !isOpen">
-    <ng-content select="[acc-title]"></ng-content>
+    <ng-content select="[title]"></ng-content>
     <div class="icon" [class.active]="isOpen">+</div>
 </div>
 <app-tab [isOpen]="isOpen">
-    <ng-content select="[acc-content]"></ng-content>
+    <ng-content select="[content]"></ng-content>
 </app-tab>

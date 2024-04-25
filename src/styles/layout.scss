@@ -1,14 +1,22 @@
+:root {
+    --app-height: 100%;
+    --padding: 1rem;
+    --border: 1rem;
+    --border-small: 0.5rem;
+    --border-big: 2rem;
+}
+
 * {
+    box-sizing: border-box;
+}
+
+html, body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 .full-page {
     height: var(--app-height);
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
 }
 
 .full-img {
@@ -20,29 +28,48 @@
 .flex {
     display: flex;
 
-    &.column {
-        flex-direction: column;
-    }
-
-    &.gap {
-        @for $i from 1 through 10 {
-            &-#{$i * 5} {
-                gap: #{$i * 5}px;
-            }
+    @each $direction in (column, row) {
+        &-#{$direction} {
+            flex-direction: $direction;
         }
     }
 
-    &-end {
-        justify-content: flex-end;
+    @each $justify in (center, start, end) {
+        &-#{$justify} {
+            justify-content: $justify;
+        }
+    }
+
+    &-wrap {
+        flex-wrap: wrap;
+    }
+
+    &-grow {
+        flex-grow: 1;
     }
 }
 
+.gap {
+    $g: 5px;
+    gap: $g;
 
-.badge {
-    font-weight: 500;
-    padding: 0.3rem 0.7rem;
-    border-radius: 5rem;
-    opacity: 0.8;
-    font-size: var(--text-small);
-    background-color: rgb(228, 228, 228);
+    @for $i from 1 through 10 {
+        &-#{$i} {
+            gap: $i * $g;
+        }
+    }
+}
+
+.padded {
+    padding: var(--padding);
+
+    &-v {
+        padding-top: var(--padding);
+        padding-bottom: var(--padding);
+    }
+
+    &-h {
+        padding-left: var(--padding);
+        padding-right: var(--padding);
+    }
 }

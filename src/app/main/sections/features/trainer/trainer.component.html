@@ -1,0 +1,34 @@
+<app-feature [marginTop]="marginTop" [marginBottom]="marginBottom">
+    <div title>
+        <ng-content select="[title]"></ng-content>
+    </div>
+
+    <ng-container content>
+        <app-card side="left">
+            <app-image [animated]="true" [src]="image" alt="trainer-image" />
+
+            @if (video) {
+            <div class="video-button">
+                <app-icon class="video-icon" src="play.svg" (click)="showVideo()" />
+                <app-button class="invite-button" (click)="showVideo()" i18n>
+                    Watch invitation
+                    <span class="badge bg-secondary">{{invitationLanguage}}</span>
+                </app-button>
+            </div>
+            }
+        </app-card>
+
+
+        <app-card side="right" [adjust]="true">
+            <ng-content select="[description]"></ng-content>
+        </app-card>
+
+        <app-tab feature-below [isOpen]="showingVideo" [duration]="0.5">
+            <app-card side="center">
+                <app-video [src]="video" #videoRef />
+            </app-card>
+        </app-tab>
+
+    </ng-container>
+
+</app-feature>

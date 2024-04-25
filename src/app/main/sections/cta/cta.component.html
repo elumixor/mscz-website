@@ -1,0 +1,70 @@
+<!-- Simple form for email and a submit button -->
+<form [formGroup]="form" (ngSubmit)="onSubmit()" #formRef>
+    <h3 class="text-center text-huge" i18n>Participate!</h3>
+
+    <div class="price-texts">
+        <p class=" price-full" i18n>
+            Full price for 4 days is <b>6000 CZK / 235 EUR</b>
+        </p>
+        <br>
+        <p class="price-full" i18n>
+            The price includes 4 days of the complete retreat program, accommodation and food (3 meals per day).
+        </p>
+        <br>
+        <p class="price-full big" i18n>Reservation deposit is <b>2000 CZK / 80 EUR</b></p>
+        <br>
+        <p class="price-full" i18n>
+            <i>Deposit guarantees your place at the retreat.</i>
+        </p>
+    </div>
+
+    <label for="email" i18n>Email</label>
+    <input type="email" id="email" name="email" placeholder="your@email.com" formControlName="email"
+           autocomplete="email">
+
+    <app-tab class="hint error" [isOpen]="!email.valid && form.touched" i18n>
+        Email is invalid
+    </app-tab>
+
+    <app-button type="submit" class="submit" (click)="onSubmit()" i18n #submit>Reserve my place</app-button>
+
+    <p class="hint text-center after-hint" i18n>
+        After registration, you will receive an email with payment instructions, as well as the link to the retreat
+        group.
+    </p>
+</form>
+
+<div class="container" #fixedContainer>
+    <div class="scroller" #scroller></div>
+    <div #priceContainer>
+        <div #price>
+            <p class="hint" i18n>Full price for 4 days is <b>6000 CZK / 235 EUR</b></p>
+        </div>
+        <div #price>
+            <p class="price-text" i18n>Reservation deposit is <b>2000 CZK / 80 EUR</b></p>
+        </div>
+    </div>
+    <app-button class="fixed-button" (click)="scrollToForm()">
+        <div class="button-text" i18n>
+            Reserve my place
+        </div>
+        <div class="hint deadline" i18n>
+            Registration is open until the <b>1st of May</b>
+        </div>
+    </app-button>
+</div>
+
+<ng-template #popup>
+    <div class="overlay">
+        <h2>
+            🎉🎉🎉
+        </h2>
+        <h4 i18n>
+            Thank you for your registration!
+        </h4>
+        <p i18n>You will receive an email with payment instructions shortly.</p>
+        <p i18n>Once the payment is received, your place will be reserved!</p>
+
+        <app-button class="close" (click)="overlay.hide()" i18n>Close</app-button>
+    </div>
+</ng-template>

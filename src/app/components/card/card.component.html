@@ -1,0 +1,24 @@
+@if (bordered) {
+<app-bordered>
+    <ng-container [ngTemplateOutlet]="content"></ng-container>
+</app-bordered>
+} @else {
+<ng-container [ngTemplateOutlet]="content"></ng-container>
+}
+
+<!-- Templates -->
+<ng-template #content>
+    <div class="flex">
+        @if (adjust && side === 'left') {
+        <div class="space"></div>
+        }
+
+        <div class="flex-grow">
+            <ng-content></ng-content>
+        </div>
+
+        @if (adjust && side === 'right') {
+        <div class="space"></div>
+        }
+    </div>
+</ng-template>

@@ -1,0 +1,82 @@
+:host {
+    height: var(--app-height);
+    position: relative;
+    display: block;
+    color: white;
+}
+
+.video-container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    user-select: none;
+}
+
+.video-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: color-mix(in srgb, var(--secondary) 20%, rgb(0 0 0 / 50%));
+}
+
+.content {
+    width: 90%;
+    position: fixed;
+    padding: var(--padding);
+    z-index: -1;
+}
+
+.subtitle   {
+    text-shadow: 0 0 5px black;
+}
+
+.ms-description {
+    margin: 20px 0 10px;
+    --icon-size: 2.5rem;
+    text-shadow: 0 0 5px black;
+}
+
+.ms-project {
+    font-size: 0.8rem;
+    font-weight: normal;
+}
+
+ul {
+    list-style: none;
+    list-style-position: inside;
+
+    padding-top: 10px;
+    padding-left: 0px;
+    line-height: 1.5;
+}
+
+
+.cross-section {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 100%;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        top: -100px;
+        background: linear-gradient(180deg, transparent, var(--black));
+    }
+}

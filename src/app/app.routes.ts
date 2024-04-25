@@ -1,10 +1,10 @@
 import type { Routes } from "@angular/router";
-import { Retreat2Component } from "@pages";
+import { MainComponent } from "./main/main.component";
 
 export const routes: Routes = [
     {
         path: "retreats/2",
-        component: Retreat2Component,
+        component: MainComponent,
     },
     {
         path: "**",
