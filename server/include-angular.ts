@@ -9,7 +9,7 @@ export async function includeAngular(server: Server) {
     const { default: bootstrap } = await import("../src/main.server");
 
     const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-    const browserDistFolder = resolve(serverDistFolder, "../browser");
+    const browserDistFolder = resolve(serverDistFolder, "../../browser");
     const indexHtml = join(serverDistFolder, "index.server.html");
 
     const commonEngine = new CommonEngine();

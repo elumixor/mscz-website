@@ -4,7 +4,7 @@ import { Server } from "./server";
 
 async function run() {
     // Create our server
-    const server = new Server();
+    const server = new Server({ port: 8080 });
 
     // Create a handler and register it
     const handler = new Api();
@@ -23,4 +23,4 @@ async function run() {
     server.start();
 }
 
-await run();
+void run();
