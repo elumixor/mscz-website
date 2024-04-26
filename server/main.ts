@@ -4,7 +4,8 @@ import { Server } from "./server";
 
 async function run() {
     // Create our server
-    const server = new Server({ port: 8080 });
+    const port = process.env["NG_DEV"] ? 4000 : 8080;
+    const server = new Server({ port });
 
     // Create a handler and register it
     const handler = new Api();
