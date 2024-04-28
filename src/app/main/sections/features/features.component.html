@@ -1,22 +1,3 @@
-<app-feature [marginBottom]="false">
-    <ng-container title i18n>Revitalize Your Body and Mind</ng-container>
-
-    <ng-container content>
-        <app-card side="left">
-            <app-image [animated]="true" src="assets/images/retreats/meditate.png" alt="asanas" />
-        </app-card>
-
-        <app-card side="right" [adjust]="true" i18n>
-            Immerse yourself in our rejuvenating yoga sessions designed to elevate both your physical and mental
-            well-being.
-            Explore the profound benefits of yoga asanas and mindfulness practices, fostering harmony between your body
-            and
-            mind.
-        </app-card>
-    </ng-container>
-</app-feature>
-
-
 <app-place [marginTop]="false">
     <ng-container title i18n>Rest. Recharge. Truly.</ng-container>
     <ng-container description i18n>
@@ -84,9 +65,9 @@
     <ng-container title i18n>Revitalize Your Body and Mind</ng-container>
     <ng-container content>
         <app-card side="left">
-            <app-image [animated]="true" background src="assets/images/retreats/asanas.png" alt="asanas" />
+            <app-image [animated]="true" background src="assets/images/retreats/meditate.png" alt="asanas" />
         </app-card>
-        <app-card i18n>
+        <app-card i18n [adjust]="true">
             Immerse yourself in our rejuvenating yoga sessions designed to elevate both your physical and mental
             well-being.
             Explore the profound benefits of yoga asanas and mindfulness practices, fostering harmony between your body
@@ -191,7 +172,7 @@
             <app-image [animated]="true" [style.height.rem]="30" background src="assets/images/retreats/food.png"
                        alt="food" />
         </app-card>
-        <app-card i18n>
+        <app-card [adjust]="true" i18n>
             Enjoy the pleasures of the foods, which elevate your mental state.
             The food is prepared with love and care, it is rich in nutrients and vitamins.
             <br>
@@ -209,7 +190,7 @@
         <app-card side="left">
             <app-image [animated]="true" background src="assets/images/retreats/friends.png" alt="friends" />
         </app-card>
-        <app-card i18n>
+        <app-card [adjust]="true" i18n>
             Discover a welcoming community of like-minded individuals eager to support your journey towards well-being.
             Engage in meaningful conversations, share experiences, and forge genuine connections with fellow
             practitioners
