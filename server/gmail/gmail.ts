@@ -1,9 +1,8 @@
 import juice from "juice";
-import MailComposer from "nodemailer/lib/mail-composer";
+import nodemailer from "nodemailer";
 import type Mail from "nodemailer/lib/mailer";
 import path from "path";
 import { fileData } from "../utils";
-import nodemailer from "nodemailer";
 
 export class Gmail {
     // If modifying these scopes, delete token.json.
