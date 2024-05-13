@@ -28,7 +28,7 @@ jobs:
               run: |
                   echo "ssh.rosti.cz ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClCAi/RJxAWd2LxXNsIn+YTBc2iSLJOvR3Kqf6Luo1cjcM/3/GTtTBDg3zTSJsWc3Km7cS26huWCnRguwvgvLFz1JsSTNW16yRAnOXuPW4bXjfPkFZnjYowePjXwO+3771tv6mfEoL8gxL8My9Q4cn9snVg1RXX8G6tucvCP36Ed9c+lQe0qnWRAKfzOiAhsl0rqj1DJ8yGwRelKk9jSlxE65sAS7V6fV8lCH2ymyrm2rV6yOF6Meb4C6kU9BcXMJzqbTorQTH7Spi/dyz3yMsRU3117OWYZOMqS3tcNRSYH7DAqL4Z7/2ceGMN/TOKi8md/Z770O3+vqmRWr8ze/t" > ./known_hosts
             - name: Create google password
-              run: mkdir secret && echo ${{ secrets.GOOGLE_PASSWORD }} > secret/google.json
+              run: mkdir secret && echo \"${{ secrets.GOOGLE_PASSWORD }}\" > secret/google.json
             - name: env
               run: |
                   cat << EOF > .env
